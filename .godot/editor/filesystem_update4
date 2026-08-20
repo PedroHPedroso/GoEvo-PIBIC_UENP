@@ -1,0 +1,4 @@
+res://default_env.tres
+res://Cenas/Fase1/Fase1.tscn
+res://Cenas/Shaders/MovementClouds.gdshader
+res://Cenas/Shaders/WaterMovement.gdshader

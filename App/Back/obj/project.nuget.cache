@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "G5W5zT28dB0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pedro\\Desktop\\GoEvo\\App\\Back\\Back.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "O pacote 'Microsoft.OpenApi' 2.0.0 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "C:\\Users\\Pedro\\Desktop\\GoEvo\\App\\Back\\Back.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Pedro\\Desktop\\GoEvo\\App\\Back\\Back.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

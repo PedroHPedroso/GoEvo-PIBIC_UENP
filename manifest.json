@@ -1,0 +1,26 @@
+{
+  "ground_center": [
+    "ground_center_01.png",
+    "ground_center_02.png",
+    "ground_center_03.png",
+    "ground_center_04.png"
+  ],
+  "ground_left_edge": [
+    "ground_left_edge_01.png",
+    "ground_left_edge_02.png",
+    "ground_left_edge_03.png",
+    "ground_left_edge_04.png"
+  ],
+  "ground_right_edge": [
+    "ground_right_edge_01.png",
+    "ground_right_edge_02.png",
+    "ground_right_edge_03.png",
+    "ground_right_edge_04.png"
+  ],
+  "ground_single": [
+    "ground_single_01.png",
+    "ground_single_02.png",
+    "ground_single_03.png",
+    "ground_single_04.png"
+  ]
+}

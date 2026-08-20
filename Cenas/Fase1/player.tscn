@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://bfln1sq27jk3r"]
+
+[ext_resource type="Script" uid="uid://o4se4ohmqk1e" path="res://Scripts/player.gd" id="1_5x46v"]
+[ext_resource type="Texture2D" uid="uid://dwh6bqqwbxrer" path="res://Animações/Sapo/Attack/SapoAttack.png" id="2_4wgiw"]
+[ext_resource type="Texture2D" uid="uid://bh2hy6qy81w17" path="res://Animações/Sapo/Attack/SapoAttackLingua1.png" id="3_xikq4"]
+[ext_resource type="Texture2D" uid="uid://bxe72vxyos8fh" path="res://Animações/Sapo/Attack/SapoAttackLingua2.png" id="4_cwf6g"]
+[ext_resource type="Texture2D" uid="uid://b2t2n48cuiv8c" path="res://Animações/Sapo/Attack/SapoAttackLingua3.png" id="5_l2w23"]
+[ext_resource type="Texture2D" uid="uid://ufxdcsb00hou" path="res://Animações/Sapo/Idle/SapoIdle.png" id="6_lyfnk"]
+[ext_resource type="Texture2D" uid="uid://c8klrll4lqp42" path="res://Animações/Sapo/Jump/SapoJump1.png" id="7_eduqe"]
+[ext_resource type="Texture2D" uid="uid://cufqtnr60xu8i" path="res://Animações/Sapo/Jump/SapoJump2.png" id="8_nirwp"]
+[ext_resource type="Texture2D" uid="uid://do4t5nedfqylx" path="res://Animações/Sapo/Jump/SapoJump.png" id="9_abc2c"]
+[ext_resource type="Texture2D" uid="uid://du5r2dj3dbmqn" path="res://Animações/Sapo/Jump/SapoJump3.png" id="10_5teyl"]
+[ext_resource type="Texture2D" uid="uid://142kptbsmjkh" path="res://Animações/Sapo/Jump/SapoJump6.png" id="11_68x2n"]
+[ext_resource type="Texture2D" uid="uid://bo2a7dbnyrv5a" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho2.png" id="12_3dxi6"]
+[ext_resource type="Texture2D" uid="uid://2knvsqbta2oo" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho3.png" id="13_8jx7o"]
+[ext_resource type="Texture2D" uid="uid://dlihkyijqr0s4" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho4.png" id="14_kpkbl"]
+[ext_resource type="Texture2D" uid="uid://bd0e2oa2100o1" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho5.png" id="15_6vj3h"]
+[ext_resource type="Texture2D" uid="uid://cm4tx3mfut7cw" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho6.png" id="16_11ea1"]
+[ext_resource type="Texture2D" uid="uid://bc2n42jagjoof" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho7.png" id="17_702lv"]
+[ext_resource type="Texture2D" uid="uid://d0gng451ujamt" path="res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho8.png" id="18_jq1dh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sihr0"]
+size = Vector2(18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxip4"]
+atlas = ExtResource("2_4wgiw")
+region = Rect2(0, 0, 146, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgucs"]
+atlas = ExtResource("2_4wgiw")
+region = Rect2(146, 0, 146, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_157go"]
+atlas = ExtResource("6_lyfnk")
+region = Rect2(0, 0, 121, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72r0d"]
+atlas = ExtResource("6_lyfnk")
+region = Rect2(121, 0, 121, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2l5q"]
+atlas = ExtResource("9_abc2c")
+region = Rect2(384, 0, 128, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xxps"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_pxip4")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hgucs")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_xikq4")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_cwf6g")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_l2w23")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_157go")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_72r0d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("7_eduqe")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_nirwp")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_u2l5q")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_5teyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_68x2n")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_3dxi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8jx7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kpkbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6vj3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_11ea1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_702lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jq1dh")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_had87"]
+size = Vector2(22, 27)
+
+[node name="Player" type="CharacterBody2D" unique_id=338470287]
+collision_mask = 2
+script = ExtResource("1_5x46v")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=149639095]
+position = Vector2(3, -3.5)
+shape = SubResource("RectangleShape2D_sihr0")
+metadata/_edit_group_ = true
+
+[node name="Camera" type="Camera2D" parent="." unique_id=733048914]
+position = Vector2(-1, 0)
+zoom = Vector2(2, 2)
+limit_left = -5
+limit_right = 900000
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.31
+drag_top_margin = 0.38
+drag_right_margin = 0.36
+editor_draw_limits = true
+editor_draw_drag_margin = true
+metadata/_edit_group_ = true
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1851401454]
+position = Vector2(3.6984415, -3.676542)
+scale = Vector2(0.17027368, 0.18563046)
+sprite_frames = SubResource("SpriteFrames_2xxps")
+animation = &"idle"
+metadata/_edit_group_ = true
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1789623249]
+position = Vector2(22, 0)
+collision_layer = 16
+collision_mask = 32
+
+[node name="colliHitbox" type="CollisionShape2D" parent="hitbox" unique_id=1935540521]
+position = Vector2(1, -14.5)
+shape = SubResource("RectangleShape2D_had87")
+debug_color = Color(0.99995345, 0.34828132, 0.35990697, 0.41960785)
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

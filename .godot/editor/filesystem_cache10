@@ -1,0 +1,200 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1787244444
+default_env.tres::Environment::8504028626863088688::1787244444::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1784049538::0::1::::<><><>0<>0<><>::
+Fase2.md::TextFile::-1::1786987408::0::1::::<><><>0<>0<><>::
+Fase3.md::TextFile::-1::1787012753::0::1::::<><><>0<>0<><>::
+Fase4.md::TextFile::-1::1787013703::0::1::::<><><>0<>0<><>::
+GUIA_SPRITES_FASES_3_E_4.md::TextFile::-1::1787168103::0::1::::<><><>0<>0<><>::
+IconeMosca.png::CompressedTexture2D::2388624654580420504::1786722890::1786722895::1::::<><><>0<>0<>62dc2f8a1d7de5b10e9478af0d3892b5<>res://.godot/imported/IconeMosca.png-1b981d4a52f45b3cb4ff457f76f44810.ctex::
+manifest.json::JSON::-1::1778276908::0::1::::<><><>0<>0<><>::
+::res://Animações/::1787019977
+Moscas.png::CompressedTexture2D::2347238187002038151::1785979544::1785979548::1::::<><><>0<>0<>f0bca69ba614c39cc640936257f7c966<>res://.godot/imported/Moscas.png-5ac5bcefa46a4befbaaede96e8d567a8.ctex::
+Pantano2.1.png::CompressedTexture2D::5337026431935164969::1784222815::1784222818::1::::<><><>0<>0<>819ae5c8706c45347ff2e9cdf47b1648<>res://.godot/imported/Pantano2.1.png-07401374ab65995ebb724dfa043f76c5.ctex::
+Pantano2.png::CompressedTexture2D::8251081362447439102::1784167525::1784167526::1::::<><><>0<>0<>9a893c8b882bb4674097da80cb7bc7a2<>res://.godot/imported/Pantano2.png-7175e810fbd9d5a85a06417231e1b541.ctex::
+Pantano.png::CompressedTexture2D::1879609834835055077::1784165534::1784166943::1::::<><><>0<>0<>cc64d2a5fb61991ab3856f22b0e66aa1<>res://.godot/imported/Pantano.png-623ca03e4a597996a6c59faea4b1988f.ctex::
+PantanoTerrenos.png::CompressedTexture2D::2450569137038330356::1784170164::1784170165::1::::<><><>0<>0<>bd5577babb97b46b530aa648c665a23b<>res://.godot/imported/PantanoTerrenos.png-dbfa148f16e00dd428cb85125edab584.ctex::
+vitoriaregia (1).png::CompressedTexture2D::76815625628740014::1784010005::1784010075::1::::<><><>0<>0<>fae45889074680ba2b9426d41275f4f4<>res://.godot/imported/vitoriaregia (1).png-ad77bfe3e34423335fd4df642ec02e4a.ctex::
+::res://Animações/Fase2/::1786990867
+MariposaBranca.png::CompressedTexture2D::4167942977196349396::1786990374::1786990473::1::::<><><>0<>0<>391b23b79b7589dae60b430628d5c62f<>res://.godot/imported/MariposaBranca.png-d1f5dcc638ee53fe204f41eaaff93ad9.ctex::
+MariposaMarromEPreta.png::CompressedTexture2D::3187228547809925357::1786990374::1786990473::1::::<><><>0<>0<>f586fa533022850d3697aa223d62ada0<>res://.godot/imported/MariposaMarromEPreta.png-d645b7b3736e0ba725e87d4eeffbfd61.ctex::
+::res://Animações/Fase2/Cenario/::1787010723
+Cenarios.png::CompressedTexture2D::8051868225890985027::1786990879::1786990901::1::::<><><>0<>0<>93958171b96d9d1c4a8a0eae0c55dce4<>res://.godot/imported/Cenarios.png-bd9955f023c4c8ff35af6f3268785531.ctex::
+Troncos.png::CompressedTexture2D::6110271896097567008::1786989111::1786990867::1::::<><><>0<>0<>378180e6cb0d1344cb7f9ef3c8cd2fe4<>res://.godot/imported/Troncos.png-a21bc13d59d7502d61a886c6aac6f4bd.ctex::
+::res://Animações/Fase3/::1787019976
+::res://Animações/Fase3/Sprites/::1787244713
+cenario_trilha.png::CompressedTexture2D::6050734774662969759::1787167164::1787167166::1::::<><><>0<>0<>7a5866f74ce58074893e0d72ddf31ebf<>res://.godot/imported/cenario_trilha.png-07bab525253bccada40cb759da4d0495.ctex::
+clareira_final.png::CompressedTexture2D::3605795192348458614::1787162369::1787162902::1::::<><><>0<>0<>9bb5ec993d9f655dfeb189be232390d1<>res://.godot/imported/clareira_final.png-c3566ae6e9d77354f4ee1ee34e7d0f18.ctex::
+cobra_base.png::CompressedTexture2D::8311052075181752563::1787244434::1787244436::1::::<><><>0<>0<>6afc6132dad3de8823694ca892a183f2<>res://.godot/imported/cobra_base.png-93e96c417460d57ea3850cfc00321d8a.ctex::
+cone_visao.png::CompressedTexture2D::3690638743772650359::1787164979::1787164987::1::::<><><>0<>0<>a30b7771221c2b694643c0bf916ee61c<>res://.godot/imported/cone_visao.png-39935d5fb1ebd36d7716db5a7f1c7c9d.ctex::
+faixa_amarela.png::CompressedTexture2D::7786312987169425691::1787244704::1787244715::1::::<><><>0<>0<>d41fce9335f5fe3dfa51070a5bce6fb8<>res://.godot/imported/faixa_amarela.png-109f7aad457e89823562297b92aef0db.ctex::
+faixa_preta.png::CompressedTexture2D::7938150274290766530::1787244696::1787244715::1::::<><><>0<>0<>8096b10950662e2d99e4ded4b342206a<>res://.godot/imported/faixa_preta.png-82acda240bdabea022d8d327d97bb6b6.ctex::
+faixa_vermelha.png::CompressedTexture2D::1061792543701883089::1787244713::1787244715::1::::<><><>0<>0<>8397a2c9e08218cd5bd3ad3537e2b48f<>res://.godot/imported/faixa_vermelha.png-61db5a09e34d073332f6f0ee47536b86.ctex::
+icone_ataque.png::CompressedTexture2D::4649485681449898803::1787165083::1787165153::1::::<><><>0<>0<>4e540672d6ed97ad527945c1a022a797<>res://.godot/imported/icone_ataque.png-a7d8d54e2471a0e1270ee06f655cda4a.ctex::
+icone_hesitacao.png::CompressedTexture2D::209077742774225071::1787165150::1787165153::1::::<><><>0<>0<>9ad2b9574c74aeb116d7795dcc2f6629<>res://.godot/imported/icone_hesitacao.png-d7b19f01596c86182656de1cadcec541.ctex::
+pigmento_amarelo.png::CompressedTexture2D::1120867874290287852::1787163705::1787163724::1::::<><><>0<>0<>3bacb07313d1a069d71bfca09ff3aaa2<>res://.godot/imported/pigmento_amarelo.png-4be5c7be6b29955e4a2c735279d87a4d.ctex::
+pigmento_preto.png::CompressedTexture2D::7743316786772840850::1787163693::1787163724::1::::<><><>0<>0<>c0a2942edc9840b99d0ea4a956aa76c1<>res://.godot/imported/pigmento_preto.png-280ca3802c40507d90b76fda707c110a.ctex::
+pigmento_vermelho.png::CompressedTexture2D::1172838206178278595::1787163719::1787163724::1::::<><><>0<>0<>3204916128498861e66b3467ebc0e314<>res://.godot/imported/pigmento_vermelho.png-2407f51326f8a4bf7d6a7fc1d5b02784.ctex::
+predador_ave.png::CompressedTexture2D::8565940362699750720::1787164630::1787164634::1::::<><><>0<>0<>7c1a8ed8582a44ffbdbd38e490775583<>res://.godot/imported/predador_ave.png-54e1af61ecac49c2444cd46434af8c0e.ctex::
+predador_gamba.png::CompressedTexture2D::313033277751083821::1787164781::1787164790::1::::<><><>0<>0<>1874db38d992545f8dc240b2099a82dd<>res://.godot/imported/predador_gamba.png-16dd2763f56d84190307a4ab855e74fe.ctex::
+predador_texugo.png::CompressedTexture2D::4429947708499899329::1787164875::1787164987::1::::<><><>0<>0<>ca49b19ee7e7a4a1fe9a388cc99d2d41<>res://.godot/imported/predador_texugo.png-3a85d77e7fed4316bc38e9aec24a236e.ctex::
+tronco_abrigo.png::CompressedTexture2D::7199913041353419156::1787167288::1787167783::1::::<><><>0<>0<>0276256bf42877b1127ae738c2239f37<>res://.godot/imported/tronco_abrigo.png-eed80a8d55cc6212b93d6bdbe26c6002.ctex::
+::res://Animações/Fase4/::1787019977
+::res://Animações/Fase4/Sprites/::1787019977
+LEIA-ME.md::TextFile::-1::1787019977::0::1::::<><><>0<>0<><>::
+::res://Animações/Sapinha/::1786724895
+imagem sapo 1.png::CompressedTexture2D::2284951531856358411::1786640489::1786724895::1::::<><><>0<>0<>cbef2719d063df4cbd8bcaf5f9faa818<>res://.godot/imported/imagem sapo 1.png-bc6f3b273b5b040840c93b7c8b39a415.ctex::
+imagem sapo 2.png::CompressedTexture2D::1613018538644865866::1786640489::1786724895::1::::<><><>0<>0<>02f9016a902f79b128125de19a24430c<>res://.godot/imported/imagem sapo 2.png-eb2a7c2f69b2046599f937aa8446f329.ctex::
+imagem sapo 3.png::CompressedTexture2D::4058304560431649547::1786640489::1786724895::1::::<><><>0<>0<>0f0a197dff29bf0999aee173a0a89bbc<>res://.godot/imported/imagem sapo 3.png-c2fc70ad1fd58261c0637de5f9c1eb7d.ctex::
+::res://Animações/Sapo/::1784155632
+::res://Animações/Sapo/Attack/::1786558008
+SapoAttack1.png::CompressedTexture2D::1276107804233632692::1786557205::1786558008::1::::<><><>0<>0<>4d6717f91cd44035cdb44f75faa4dc8e<>res://.godot/imported/SapoAttack1.png-9e4658560e8f46fbef654a1358bd7fff.ctex::
+SapoAttack2.png::CompressedTexture2D::8770876481984730235::1786557138::1786558008::1::::<><><>0<>0<>77e0d8acaf388779bdd63ec2786313d7<>res://.godot/imported/SapoAttack2.png-bb4ba951d0b21bc515e98ce91650b71e.ctex::
+SapoAttack.png::CompressedTexture2D::8719752134056411749::1784000091::1784155636::1::::<><><>0<>0<>ac246adaddaa6a9bce34f2c7950e29bf<>res://.godot/imported/SapoAttack.png-de8790a38152c831bc370899398ca707.ctex::
+SapoAttackCompleto.png::CompressedTexture2D::5668138277960301021::1786557998::1786558008::1::::<><><>0<>0<>761916877e5c2e1eb2c49a8b817d442d<>res://.godot/imported/SapoAttackCompleto.png-8b48042cf4c09e321e0d362ea663113c.ctex::
+SapoAttackIncompleto.png::CompressedTexture2D::6740445536545807186::1786557940::1786558008::1::::<><><>0<>0<>49f41555cea32e574fd6795f832dfb09<>res://.godot/imported/SapoAttackIncompleto.png-6e8e2a0ce9ed91e084af9e2b8f6549e3.ctex::
+SapoAttackLingua1.png::CompressedTexture2D::2933950320598347084::1784001253::1784155636::1::::<><><>0<>0<>bb5e9e7724fece8ceeaa31798f0482b6<>res://.godot/imported/SapoAttackLingua1.png-a923096dc1a97e6dedca502d3f04c371.ctex::
+SapoAttackLingua2.png::CompressedTexture2D::4011013898218803301::1784001422::1784155636::1::::<><><>0<>0<>1117bda6a98a0564b0c4f26923b6b8ef<>res://.godot/imported/SapoAttackLingua2.png-3a70eccba355304c53e8ac7618864c52.ctex::
+SapoAttackLingua3.png::CompressedTexture2D::4322406787646206648::1784001453::1784155636::1::::<><><>0<>0<>5994485bcc234377c992aad8794db450<>res://.godot/imported/SapoAttackLingua3.png-910eee40c28927e0bf57fa6fdd72bccd.ctex::
+::res://Animações/Sapo/Idle/::1784155636
+SapoIdle.png::CompressedTexture2D::1415500742679304708::1784000024::1784155636::1::::<><><>0<>0<>b1f266405d826cb894f3f81b20faede7<>res://.godot/imported/SapoIdle.png-96345a3f10fc85d7d4075a98fefaa38b.ctex::
+::res://Animações/Sapo/Jump/::1784155636
+Jump3.png::CompressedTexture2D::5530433384300817760::1784005436::1784155636::1::::<><><>0<>0<>d3b4451e3fa12bebb612712ff54651a1<>res://.godot/imported/Jump3.png-a793b0036b367b2a3fcd5177b1a39008.ctex::
+SapoJump1.png::CompressedTexture2D::7110415826481357249::1784005178::1784155636::1::::<><><>0<>0<>2ca1969acb9c2eb2abab6feb90d121ea<>res://.godot/imported/SapoJump1.png-3406fd0209630f29f8a518826be4386c.ctex::
+SapoJump2.png::CompressedTexture2D::6187946241393666850::1784005377::1784155636::1::::<><><>0<>0<>3a3fd39993dffccdc98f39bdfbf4debf<>res://.godot/imported/SapoJump2.png-56f6c83625c35afaaf9d3579e637b4ba.ctex::
+SapoJump3.png::CompressedTexture2D::8626050834523750997::1784005509::1784155636::1::::<><><>0<>0<>6197d0245a41e1374e46ba5a31f94acb<>res://.godot/imported/SapoJump3.png-44e8fc2075247a4b41814544b89b8358.ctex::
+SapoJump5.png::CompressedTexture2D::3972123667815078141::1784005611::1784155636::1::::<><><>0<>0<>68382fc137aab53a9ff1a7c00a6e7bfa<>res://.godot/imported/SapoJump5.png-66b7446fcb9765cb99fe7483725fa8f1.ctex::
+SapoJump6.png::CompressedTexture2D::1886434923471826911::1784005635::1784155636::1::::<><><>0<>0<>44b5283a69edc91e886839d682760601<>res://.godot/imported/SapoJump6.png-41b706e47d8c6d131823ead638c55bd1.ctex::
+SapoJump.png::CompressedTexture2D::8202980702685614237::1784000064::1784155636::1::::<><><>0<>0<>303ce8081231b2f5c29f4224f2890508<>res://.godot/imported/SapoJump.png-0fb9dac5d9ea267d2d5efc86040e2369.ctex::
+::res://Animações/Sapo/Walk/::1784156930
+SapinhoAndaninho1.1.png::CompressedTexture2D::459719337633799160::1784154759::1784155636::1::::<><><>0<>0<>3da9d443534899c2f2a208d0e1cb21da<>res://.godot/imported/SapinhoAndaninho1.1.png-908740169ca90cb8ca87ee2bf218a593.ctex::
+SapinhoAndaninho2.png::CompressedTexture2D::6372943275696504109::1784154759::1784155636::1::::<><><>0<>0<>89963c31b1ad908232ea95520b109554<>res://.godot/imported/SapinhoAndaninho2.png-b1eef58995043b8fd83fee950b386ff0.ctex::
+SapinhoAndaninho3.png::CompressedTexture2D::4094400663871224504::1784154759::1784155636::1::::<><><>0<>0<>476219ec11100a1760fa9c0571d86d01<>res://.godot/imported/SapinhoAndaninho3.png-4cbd645e97d60c48fc89c0a3e0875cd2.ctex::
+SapinhoAndaninho4.png::CompressedTexture2D::5419256314282565992::1784154992::1784155636::1::::<><><>0<>0<>86892383ccb174cafcef455cb434f3c3<>res://.godot/imported/SapinhoAndaninho4.png-85b4f10f53c7d132843ae5513093f478.ctex::
+SapinhoAndaninho5.png::CompressedTexture2D::3419044469684115758::1784154992::1784155636::1::::<><><>0<>0<>6bce363deec6196e6b4e623cd3765ff4<>res://.godot/imported/SapinhoAndaninho5.png-e4c4cbc6a0381861072e44cdcd77daf5.ctex::
+SapinhoAndaninho6.png::CompressedTexture2D::8023904539756020307::1784154992::1784155636::1::::<><><>0<>0<>99af6b94ce6b684ead673485b808645d<>res://.godot/imported/SapinhoAndaninho6.png-bdea8c4bc8446f6f4c12bb4ce7d55aeb.ctex::
+SapinhoAndaninho7.png::CompressedTexture2D::7353916898415072611::1784155124::1784155636::1::::<><><>0<>0<>295f4dfce032949932960abaa65d35f0<>res://.godot/imported/SapinhoAndaninho7.png-52fb00e82b48e65b94b6f558c3ac8301.ctex::
+SapinhoAndaninho8.png::CompressedTexture2D::4376783746830881988::1784155124::1784155636::1::::<><><>0<>0<>9a7b058c14429631a94e0b664c8b371a<>res://.godot/imported/SapinhoAndaninho8.png-3208e4e98741ecf72c91fa6cd6b2c174.ctex::
+::res://Animações/Sapo/Walk/sapoandaninho/::1784156930
+SapinhoAndaninho1.1.png::CompressedTexture2D::5119905579522156530::1784156891::1784156930::1::::<><><>0<>0<>3811706474a62d5b7c1478f7080cd22e<>res://.godot/imported/SapinhoAndaninho1.1.png-949f545e935c0855146da86ee4383643.ctex::
+SapinhoAndaninho2.png::CompressedTexture2D::3424859999128405944::1784156891::1784156930::1::::<><><>0<>0<>a0508afb46a4b57d0947a1cdd45fcde8<>res://.godot/imported/SapinhoAndaninho2.png-c9846e5d56cc0d2aa94855ce9f1ba86a.ctex::
+SapinhoAndaninho3.png::CompressedTexture2D::1916570348553469734::1784156891::1784156930::1::::<><><>0<>0<>468fbe1f12529fa135dad72b919aea81<>res://.godot/imported/SapinhoAndaninho3.png-b80a81a7ee22a1ca4f0c1470dfb6634c.ctex::
+SapinhoAndaninho4.png::CompressedTexture2D::7948298503368388493::1784156891::1784156930::1::::<><><>0<>0<>34aff15842077a9ad07094a656630400<>res://.godot/imported/SapinhoAndaninho4.png-2dacef3bb27bb600412289793629d304.ctex::
+SapinhoAndaninho5.png::CompressedTexture2D::2648888479454605858::1784156891::1784156930::1::::<><><>0<>0<>62ec02c3dada6a4911abb1270bda5365<>res://.godot/imported/SapinhoAndaninho5.png-364111429ae31aef0c0a203f8761e207.ctex::
+SapinhoAndaninho6.png::CompressedTexture2D::5676170631478844370::1784156891::1784156930::1::::<><><>0<>0<>735a6c2d6a9264a7cffad08943fa4cbc<>res://.godot/imported/SapinhoAndaninho6.png-1ff9d99f687bf7db22eb728a3d199af9.ctex::
+SapinhoAndaninho7.png::CompressedTexture2D::2583379111300067841::1784156891::1784156930::1::::<><><>0<>0<>b6f639d8b8311cc5a5a6cdf6d0a45f50<>res://.godot/imported/SapinhoAndaninho7.png-a7e0807193b9e5f3cb0cf739fb70192d.ctex::
+SapinhoAndaninho8.png::CompressedTexture2D::8927171014953553395::1784156891::1784156930::1::::<><><>0<>0<>8f129018fba832624ba0bd80c9229ae0<>res://.godot/imported/SapinhoAndaninho8.png-83f8669e3090288a700703128d0a9c09.ctex::
+::res://Animações/Seasonal Tilesets/::1784004140
+LICENSE.txt::TextFile::-1::1594744344::0::1::::<><><>0<>0<><>::
+::res://Animações/Seasonal Tilesets/1 - Grassland/::1784004147
+Extra_plants (16 x 16).png::CompressedTexture2D::8416466842773483700::1594737126::1784004147::1::::<><><>0<>0<>60b4b3f6797ee400640a9ee57cce6b31<>res://.godot/imported/Extra_plants (16 x 16).png-f774f70728126502df2968866b62c0aa.ctex::
+Grassland_entities (16 x 16).png::CompressedTexture2D::7533937968392164873::1594733800::1784004147::1::::<><><>0<>0<>b8b46b7736ecde3b04a7ed68fdd5fb76<>res://.godot/imported/Grassland_entities (16 x 16).png-65d6b62db9832ecd6060c9dca8a97cb9.ctex::
+Terrain (16 x 16).png::CompressedTexture2D::7516171775894789380::1594733362::1784004147::1::::<><><>0<>0<>2e98b3fe618721a222f006b88aa0a14b<>res://.godot/imported/Terrain (16 x 16).png-eaab266e959878e02220ab8cca75506f.ctex::
+::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/::1784004147
+_Complete_static_BG_(288 x 208).png::CompressedTexture2D::5532936823453776565::1594664978::1784004147::1::::<><><>0<>0<>e2f1371f3f2a7c92b2342fdb05f454b4<>res://.godot/imported/_Complete_static_BG_(288 x 208).png-4ffa1cea1234e9d83a74b93359fc7932.ctex::
+1 - Foreground_scenery.png::CompressedTexture2D::2323945302546139717::1594664942::1784004147::1::::<><><>0<>0<>21e4a89c63d7c4ef5ff33a7c44c52e02<>res://.godot/imported/1 - Foreground_scenery.png-da322ba9e3b5008b12267912c7bf124d.ctex::
+2 - Hills.png::CompressedTexture2D::4342922811508099265::1594664932::1784004147::1::::<><><>0<>0<>1f809932c092b0bc9aa25e343a01b54a<>res://.godot/imported/2 - Hills.png-04a1a265bd677b7e3ac05b1d3c559b5d.ctex::
+3 - Cloud_cover_1.png::CompressedTexture2D::105890148348991882::1594664922::1784004147::1::::<><><>0<>0<>8b96577e99b494f1babcc2ffea831eaa<>res://.godot/imported/3 - Cloud_cover_1.png-e330aaaf2d2c8f35b1c4ab34b3546ee9.ctex::
+4 - Cloud_cover_2.png::CompressedTexture2D::8657699006043805770::1594664916::1784004147::1::::<><><>0<>0<>824ce755269c5d2d9106154084616967<>res://.godot/imported/4 - Cloud_cover_2.png-627a8f843b7b4432f6fe27972b6e523d.ctex::
+5 - Sky_color.png::CompressedTexture2D::2803056889801693972::1594664886::1784004147::1::::<><><>0<>0<>0fdc1e1d858c81bd81e7fbb0ffbd7de6<>res://.godot/imported/5 - Sky_color.png-5fcc2678fea6052e0fe01ecf6f851670.ctex::
+::res://Animações/Seasonal Tilesets/2 - Autumn Forest/::1784004147
+Autumn_entities (16 x 16).png::CompressedTexture2D::4619930424268774387::1594734662::1784004147::1::::<><><>0<>0<>1180f2c43ea9c21976d58f65bf80c7dd<>res://.godot/imported/Autumn_entities (16 x 16).png-e32b8cb6b91ebe2c8abe0c0f2121adaf.ctex::
+Terrain (16 x 16).png::CompressedTexture2D::7966817622777877711::1594734254::1784004147::1::::<><><>0<>0<>65f9086ed930ca08d936a1d5bd59ddbd<>res://.godot/imported/Terrain (16 x 16).png-0d664594234a5643ff61bc3fcdc1b3e5.ctex::
+::res://Animações/Seasonal Tilesets/2 - Autumn Forest/Background parts/::1784004147
+_Complete_static_BG_(288 x 208).png::CompressedTexture2D::3493844989709021875::1594667474::1784004147::1::::<><><>0<>0<>7f24d37267d5e8287352975719d43faf<>res://.godot/imported/_Complete_static_BG_(288 x 208).png-a899dbf4db11ca183160e10917c9d7eb.ctex::
+1 - Leaf_top.png::CompressedTexture2D::9159421088314277043::1594667582::1784004147::1::::<><><>0<>0<>14025e30c0aa8c895a23cb347bf37157<>res://.godot/imported/1 - Leaf_top.png-35bec719556784b269a4c73a4af5f3a0.ctex::
+2 - Trees.png::CompressedTexture2D::7875180377569110755::1594667598::1784004147::1::::<><><>0<>0<>4df2f558429425deecfb6335572e15ab<>res://.godot/imported/2 - Trees.png-6c16a0084cb973b1c515d45c54d6ff63.ctex::
+3 - Bottom_leaf_piles.png::CompressedTexture2D::7346242942314864191::1594667618::1784004147::1::::<><><>0<>0<>211bf8c61c6b12684c7719c0347ee411<>res://.godot/imported/3 - Bottom_leaf_piles.png-76a937aaaef2b626026c71f0ee846dc0.ctex::
+4 - Tree_row_BG_1.png::CompressedTexture2D::6144117629976870847::1594667646::1784004147::1::::<><><>0<>0<>09c30010145648bc49d9474335535658<>res://.godot/imported/4 - Tree_row_BG_1.png-0e02ad2510d30d59e6b419cac9414a15.ctex::
+5 - Tree_row_BG_2.png::CompressedTexture2D::7348329299151296825::1594667656::1784004147::1::::<><><>0<>0<>c069331622776830f88195703e5389ea<>res://.godot/imported/5 - Tree_row_BG_2.png-833003d62dbc8846d2e70d48e106ae11.ctex::
+6 - Distant_trees.png::CompressedTexture2D::6156970473889972775::1594667680::1784004147::1::::<><><>0<>0<>8d0bf883dc30d896f057c4fd3c3da2e6<>res://.godot/imported/6 - Distant_trees.png-b13edf9e74d954d95a13f085207bbbdb.ctex::
+::res://Animações/Seasonal Tilesets/3 - Tropics/::1784004146
+Terrain (16 x 16).png::CompressedTexture2D::1708998460280861795::1594734892::1784004146::1::::<><><>0<>0<>ba26d2590595531b7a43a52fa904ee2d<>res://.godot/imported/Terrain (16 x 16).png-d38daae84224922a24483f96a87af6bb.ctex::
+Tropics_entities (16 x 16).png::CompressedTexture2D::8767742642750335321::1594736688::1784004146::1::::<><><>0<>0<>13d8de6b7673e0c64663d97d398affcf<>res://.godot/imported/Tropics_entities (16 x 16).png-5937ac55554f0d1bf6c64870e9a26ecf.ctex::
+::res://Animações/Seasonal Tilesets/3 - Tropics/Background parts/::1784004147
+_Complete_static_BG_(288 x 208).png::CompressedTexture2D::9132504242199496673::1594669632::1784004147::1::::<><><>0<>0<>36aae69b730313c9478e854331042ab0<>res://.godot/imported/_Complete_static_BG_(288 x 208).png-792543305f5b6dcaff3243b0f827bbcd.ctex::
+1 - Waters_version_1.png::CompressedTexture2D::2167418220107395362::1594669880::1784004147::1::::<><><>0<>0<>9297a3f1a894ab6bcf5e4a469bb44f0c<>res://.godot/imported/1 - Waters_version_1.png-34fcdd754f9f25d5ea56b4d2483e37d3.ctex::
+2 - Waters_version_2.png::CompressedTexture2D::3374607966804192778::1594669900::1784004147::1::::<><><>0<>0<>345d7138e5c6bd6d38039be7349b9c0a<>res://.godot/imported/2 - Waters_version_2.png-c14fde387f04dff263c33935a5a63f0e.ctex::
+3 - Floating_clouds.png::CompressedTexture2D::1237684921393845755::1594669920::1784004146::1::::<><><>0<>0<>c24d9b74718b7cf9c0622ff88545e1b6<>res://.godot/imported/3 - Floating_clouds.png-24905e231766b60188a03247bb1fcf5d.ctex::
+4 - Background_clouds.png::CompressedTexture2D::923217520782147737::1594669932::1784004146::1::::<><><>0<>0<>33dd6d33192defc4d1ff4d4e6553fd5b<>res://.godot/imported/4 - Background_clouds.png-007b77701f989876de02dfd603411dd5.ctex::
+5 - Sky_color.png::CompressedTexture2D::6662780557583020620::1594669944::1784004146::1::::<><><>0<>0<>d2aafe8a1dd8bcf2b355aaa466895759<>res://.godot/imported/5 - Sky_color.png-75bf75f4822ce3ebe7caf35079939445.ctex::
+::res://Animações/Seasonal Tilesets/4 - Winter World/::1784004147
+Terrain (16 x 16).png::CompressedTexture2D::5743175489788913012::1594735610::1784004147::1::::<><><>0<>0<>c48905607b743aa9c12957c30ea4f22c<>res://.godot/imported/Terrain (16 x 16).png-fbd33c8eae21facdc87db4b0c1f30618.ctex::
+Winter_entities (16 x 16).png::CompressedTexture2D::3155937708668261551::1594735970::1784004147::1::::<><><>0<>0<>4c00faf139f7f71d8155cb4e83a24b19<>res://.godot/imported/Winter_entities (16 x 16).png-1d86d85d38f3563836789e99414e2545.ctex::
+::res://Animações/Seasonal Tilesets/4 - Winter World/Background parts/::1784004146
+_Complete_static_BG_(288 x 208).png::CompressedTexture2D::943476301298329925::1594670818::1784004146::1::::<><><>0<>0<>3d7c972bed66bd4f5f37aa91210b3a71<>res://.godot/imported/_Complete_static_BG_(288 x 208).png-ddceb7db3ecad17aab48d89249ebc72f.ctex::
+1 - Snowy_foreground_area.png::CompressedTexture2D::6061191722503760416::1594670870::1784004146::1::::<><><>0<>0<>6de24c421bac66ccea94cd2476bf9e40<>res://.godot/imported/1 - Snowy_foreground_area.png-89ced1529fdfee1350585d14d8a02a28.ctex::
+2 - Smaller_mountains.png::CompressedTexture2D::2087061796104503611::1594670896::1784004146::1::::<><><>0<>0<>9dd45a11e25ba1cae4a9846f2c20a20e<>res://.godot/imported/2 - Smaller_mountains.png-ed88a721f8f65fc5a2cd768259f21dad.ctex::
+3 - Big_mountain_BG.png::CompressedTexture2D::6466686830598301941::1594670910::1784004146::1::::<><><>0<>0<>e69638c3a002f29089b3090617503b63<>res://.godot/imported/3 - Big_mountain_BG.png-a6817aa0bd5ccce81b757ded7afd5071.ctex::
+::res://Animações/Seasonal Tilesets/5 - Misc. universal tiles/::1784004147
+Blocks (16 x 16).png::CompressedTexture2D::2799061401624812737::1594736310::1784004147::1::::<><><>0<>0<>ed76fed12f0ac3283a10ae136e71d28d<>res://.godot/imported/Blocks (16 x 16).png-627a2065cb247db3e782f70bcf55d5fc.ctex::
+Bubbling_Oil_frames (16 x 32).png::CompressedTexture2D::433651068129700802::1594736532::1784004147::1::::<><><>0<>0<>d37e3c462036f8f876064b9d28c28ba7<>res://.godot/imported/Bubbling_Oil_frames (16 x 32).png-9415713d75a46684a481cc801bf7391e.ctex::
+Flowers (16 x 16).png::CompressedTexture2D::1268544259106618043::1594736990::1784004147::1::::<><><>0<>0<>b2c9781ee9ec3fd1cd12581b38ac6e6b<>res://.godot/imported/Flowers (16 x 16).png-b6df44905614639146ef5d0cc19711a9.ctex::
+House (112 x 96).png::CompressedTexture2D::6402533153663672849::1594736944::1784004147::1::::<><><>0<>0<>0bd5cac56363dbfe10c571da262b0294<>res://.godot/imported/House (112 x 96).png-eb914f160e4e796b45ce34b37fc5f854.ctex::
+Lava_frames (16 x 32).png::CompressedTexture2D::8132015759803931331::1594736456::1784004147::1::::<><><>0<>0<>4c58e33f29927cb1f25955d795d3fc68<>res://.godot/imported/Lava_frames (16 x 32).png-185c1fd58d784b89616e6c64827a7af9.ctex::
+Metal_Wire_fence (16 x 16).png::CompressedTexture2D::6445552904398031408::1594737218::1784004147::1::::<><><>0<>0<>f0e52b14c4f774832f0977bc07c5ab5a<>res://.godot/imported/Metal_Wire_fence (16 x 16).png-05f694812aa1fe2d22ef2bd0218a938c.ctex::
+Rock_shape (16 x 16).png::CompressedTexture2D::7034597155972078759::1594826148::1784004147::1::::<><><>0<>0<>acd2f5aeb6633f7c6365f48830f1839a<>res://.godot/imported/Rock_shape (16 x 16).png-2881d7f5ee8243b9d88e9b1adf6a8efd.ctex::
+Snack_machine_Bench_Trash_bin (16 x 16).png::CompressedTexture2D::969950283703875476::1594737290::1784004147::1::::<><><>0<>0<>fb62d7a72ef9c5d1e0cd87d091d550ad<>res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-d0154940cbb00cdd61f21ef78e049461.ctex::
+Water_frames (16 x 32).png::CompressedTexture2D::4272817443108352227::1594736418::1784004147::1::::<><><>0<>0<>b7ceadb7739cbd6eb6996d14a5225b53<>res://.godot/imported/Water_frames (16 x 32).png-7150e252262eb72ab103a44460828bad.ctex::
+::res://App/::1786377637
+::res://App/Back/::1786406169
+appsettings.Development.json::JSON::-1::1786406076::0::1::::<><><>0<>0<><>::
+appsettings.json::JSON::-1::1786406076::0::1::::<><><>0<>0<><>::
+::res://App/Back/bin/::1786406169
+::res://App/Back/bin/Debug/::1786406169
+::res://App/Back/bin/Debug/net10.0/::1786406169
+::res://App/Back/obj/::1786406168
+Back.csproj.nuget.dgspec.json::JSON::-1::1786406079::0::1::::<><><>0<>0<><>::
+project.assets.json::JSON::-1::1786406079::0::1::::<><><>0<>0<><>::
+::res://App/Back/obj/Debug/::1786406168
+::res://App/Back/obj/Debug/net10.0/::1786406169
+::res://App/Back/obj/Debug/net10.0/ref/::1786406169
+::res://App/Back/obj/Debug/net10.0/refint/::1786406169
+::res://App/Back/Properties/::1786406076
+launchSettings.json::JSON::-1::1786406076::0::1::::<><><>0<>0<><>::
+::res://App/Front/::1786408372
+bg_jungle.jpg::CompressedTexture2D::7089091089644695257::1786407496::1786408304::1::::<><><>0<>0<>26dfa54802b5541541949879ccb5bdab<>res://.godot/imported/bg_jungle.jpg-5f614da2f9dba0430e0cd5d795816f05.ctex::
+logo_goevo.jpg::CompressedTexture2D::4313977256462473048::1786408284::1786408372::1::::<><><>0<>0<>a2b1f10b1edb7e0a962349ce894969d0<>res://.godot/imported/logo_goevo.jpg-9edc44d25441f017682d9d32e59a2d19.ctex::
+::res://Cenas/::1786979919
+::res://Cenas/Fase1/::1787243870
+Fase1.tscn::PackedScene::7874957175788570321::1787243870::0::1::::<><><>0<>0<><>::uid://bijn6w0nosf7q::::res://Scripts/fase_1.gd<>uid://dfc5isggp5fcm::::res://Animações/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png<>uid://dflq4fn1465y0::::res://Animações/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png<>uid://cibkbsxwn8sw4::::res://Animações/Pantano2.1.png<>uid://dr588kaayc0yq::::res://Animações/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png<>uid://dps5ds35qpe6y::::res://Animações/Pantano2.png<>uid://bdhe3klboqpq::::res://Animações/vitoriaregia (1).png<>uid://ck3gwqijhtlc4::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png<>uid://546cdadvr25c::::res://Animações/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png<>uid://bocxkhaffnrwc::::res://Animações/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png<>uid://bfln1sq27jk3r::::res://Cenas/Fase1/player.tscn<>uid://bf6264xjhw75y::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png<>uid://dvl4bjux11kco::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png<>uid://c5i2eoyhegvtn::::res://Cenas/Shaders/MovementClouds.gdshader<>uid://brj83sgs6m87::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png<>uid://b240klwe3mair::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png<>uid://8d0bl1pjmy50::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png<>uid://j334e72fsyex::::res://Cenas/Shaders/WaterMovement.gdshader<>uid://b74nwyv4ei7ss::::res://Cenas/Fase1/sapinha.tscn<>uid://bav2ub0blfxkv::::res://Scripts/hud.gd<>uid://c4iy54wjr51yn::::res://Cenas/Fase1/mosquinha.tscn<>uid://babckfy8m567m::::res://IconeMosca.png<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf
+mosquinha.tscn::PackedScene::6826345194160859333::1786974728::0::1::::<><><>0<>0<><>::uid://d6sgi1t16ne8::::res://Scripts/mosquinha.gd<>uid://8paw1r3v31x8::::res://Animações/Moscas.png<>uid://cns5akhgqpmvf::::res://Scripts/hurtbox.gd
+player.tscn::PackedScene::2760909780132470553::1786977876::0::1::::<><><>0<>0<><>::uid://o4se4ohmqk1e::::res://Scripts/player.gd<>uid://dwh6bqqwbxrer::::res://Animações/Sapo/Attack/SapoAttack.png<>uid://bh2hy6qy81w17::::res://Animações/Sapo/Attack/SapoAttackLingua1.png<>uid://bxe72vxyos8fh::::res://Animações/Sapo/Attack/SapoAttackLingua2.png<>uid://b2t2n48cuiv8c::::res://Animações/Sapo/Attack/SapoAttackLingua3.png<>uid://ufxdcsb00hou::::res://Animações/Sapo/Idle/SapoIdle.png<>uid://c8klrll4lqp42::::res://Animações/Sapo/Jump/SapoJump1.png<>uid://cufqtnr60xu8i::::res://Animações/Sapo/Jump/SapoJump2.png<>uid://do4t5nedfqylx::::res://Animações/Sapo/Jump/SapoJump.png<>uid://du5r2dj3dbmqn::::res://Animações/Sapo/Jump/SapoJump3.png<>uid://142kptbsmjkh::::res://Animações/Sapo/Jump/SapoJump6.png<>uid://bo2a7dbnyrv5a::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho2.png<>uid://2knvsqbta2oo::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho3.png<>uid://dlihkyijqr0s4::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho4.png<>uid://bd0e2oa2100o1::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho5.png<>uid://cm4tx3mfut7cw::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho6.png<>uid://bc2n42jagjoof::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho7.png<>uid://d0gng451ujamt::::res://Animações/Sapo/Walk/sapoandaninho/SapinhoAndaninho8.png
+sapinha.tscn::PackedScene::4693160537674363478::1787168096::0::1::::<><><>0<>0<><>::uid://d3bsiy400le3d::::res://Scripts/sapinha.gd<>uid://bx24xh05fvp7x::::res://Animações/Sapinha/imagem sapo 3.png<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf<>uid://7s322qrkgxnf::::res://Animações/Sapinha/imagem sapo 1.png<>uid://w8mgdxu3wj1c::::res://Animações/Sapinha/imagem sapo 2.png
+::res://Cenas/Fase2/::1787021568
+Arvores.tscn::PackedScene::8231642767532284244::1786990902::0::1::::<><><>0<>0<><>::uid://ffcyo2d4jl62::::res://Scripts/arvore.gd<>uid://ctb4jx6vomdk7::::res://Animações/Fase2/Cenario/Troncos.png
+Fase2.tscn::PackedScene::2656328079784330107::1787021568::0::1::::<><><>0<>0<><>::uid://ccec66rth6rgo::::res://Scripts/fase_2.gd<>uid://bw5hxhryk0hfb::::res://Cenas/Fase2/PlayerMariposa.tscn<>uid://bs5q2j40acghl::::res://Cenas/Fase2/predador.tscn<>uid://dpjp7orev3sp5::::res://Cenas/Fase2/Arvores.tscn<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf<>uid://dmyndf3t1wt7h::::res://Animações/Fase2/Cenario/Cenarios.png<>uid://ctb4jx6vomdk7::::res://Animações/Fase2/Cenario/Troncos.png
+PlayerMariposa.tscn::PackedScene::3992973063590715119::1787008515::0::1::::<><><>0<>0<><>::uid://bpsuxiphstm2e::::res://Scripts/player_mariposa.gd<>uid://b0m8oae647261::::res://Animações/Fase2/MariposaBranca.png
+predador.tscn::PackedScene::3712771408764623617::1787011493::0::1::::<><><>0<>0<><>::uid://du03qt171i7qt::::res://Scripts/predador.gd<>uid://babckfy8m567m::::res://IconeMosca.png
+::res://Cenas/Fase3/::1787165826
+Fase3.tscn::PackedScene::3908637550026820679::1787165826::0::1::::<><><>0<>0<><>::uid://g410yva7p7fa::::res://Scripts/fase_3.gd<>uid://qpjuc5tynpas::::res://Scripts/fase_3_cenario.gd<>uid://brkwe0a5hk2av::::res://Scripts/player_cobra.gd<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf
+::res://Cenas/Fase4/::1787021674
+Fase4.tscn::PackedScene::2822259104620987591::1787021674::0::1::::<><><>0<>0<><>::uid://dxyt0tur6o1ah::::res://Scripts/fase_4.gd<>uid://dwhbs7cfhnuv0::::res://Scripts/fase_4_cenario.gd<>uid://br2xatvyuyti5::::res://Scripts/player_tentilhao.gd<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf
+::res://Cenas/Shaders/::1787243853
+MovementClouds.gdshader::Shader::6896668973265828023::1787243853::0::1::::<><><>0<>0<><>::
+WaterMovement.gdshader::Shader::691254294437983551::1787243853::0::1::::<><><>0<>0<><>::
+::res://Fonts/::1786630194
+determination.ttf::FontFile::1477383673953777408::1786630177::1786630194::1::::<><><>0<>0<>ce7293e6350256861906e370c3f5a4d4<>res://.godot/imported/determination.ttf-82c4dba179de8baa60453d96b6053b5c.fontdata::
+license.txt::TextFile::-1::1786630177::0::1::::<><><>0<>0<><>::
+readme.txt::TextFile::-1::1786630177::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1787020891
+arvore.gd::GDScript::361431177211760029::1786990820::0::1::::<>Area2D<><>0<>0<><>::
+fase_1.gd::GDScript::2967356707844811060::1786979921::0::1::::<>Node<><>0<>0<><>::
+fase_2.gd::GDScript::4921655014634485926::1786987534::0::1::::<>Node2D<><>0<>0<><>::
+fase_3.gd::GDScript::482624596400163938::1787013156::0::1::::<>Node2D<><>0<>0<><>::
+fase_3_cenario.gd::GDScript::1154569485619117078::1787019856::0::1::::<>Node2D<><>0<>0<><>::
+fase_4.gd::GDScript::8824349818215817839::1787014050::0::1::::<>Node2D<><>0<>0<><>::
+fase_4_cenario.gd::GDScript::8717961800751368363::1787020845::0::1::::<>Node2D<><>0<>0<><>::
+hud.gd::GDScript::2431447782414967933::1786979333::0::1::::<>CanvasLayer<><>0<>0<><>::
+hurtbox.gd::GDScript::5724277180378423415::1786722499::0::1::::<>Area2D<><>0<>0<><>::
+mosquinha.gd::GDScript::275666323174143317::1786718045::0::1::::<>CharacterBody2D<><>0<>0<><>::
+pigmento_fase_3.gd::GDScript::8336684237772908545::1787019858::0::1::::<>Node2D<><>0<>0<><>::
+player.gd::GDScript::1043612359984744128::1786724078::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_cobra.gd::GDScript::3601619034553326081::1787019898::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_mariposa.gd::GDScript::3477667994653535650::1787009165::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_tentilhao.gd::GDScript::3636766747235582138::1787020846::0::1::::<>CharacterBody2D<><>0<>0<><>::
+predador.gd::GDScript::8616378055788982419::1787011520::0::1::::<>CharacterBody2D<><>0<>0<><>::
+predador_fase_3.gd::GDScript::4078975710656427720::1787019859::0::1::::<>Node2D<><>0<>0<><>::
+recurso_fase_4.gd::GDScript::5030267699396611224::1787019862::0::1::::<>Node2D<><>0<>0<><>::
+sapinha.gd::GDScript::9127722549448768659::1787168140::0::1::::<>Area2D<><>0<>0<><>::
+::res://Sons/::1779316269

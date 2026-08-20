@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoEvo — Jogo educacional de biologia evolutiva em pixel art 2D. Explore a evolução das espécies brasileiras nessa aventura retrô!" />
+  <meta name="keywords" content="jogo educacional, biologia evolutiva, pixel art, jogo 2D, ensino, Brasil" />
+  <title>GoEvo — Menu Principal</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Estilos exclusivos do Menu Principal ── */
+
+    /* Texto "PRESSIONE INICIAR" piscando */
+    .press-start {
+      font-family: var(--fonte-display);
+      font-size: 1.6rem;
+      color: var(--verde-neon);
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 10px var(--verde-neon);
+      animation: blink-slow 1.2s step-end infinite;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Versão do jogo */
+    .version-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--fonte-display);
+      font-size: 0.95rem;
+      color: rgba(150, 200, 100, 0.5);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    /* Gradiente decorativo nos cantos internos do painel */
+    .retro-panel {
+      overflow: visible;
+    }
+
+    /* DNA decorativo (ascii) */
+    .dna-deco {
+      font-family: var(--fonte-display);
+      font-size: 1.1rem;
+      color: var(--verde-medio);
+      text-align: center;
+      opacity: 0.55;
+      letter-spacing: 0.3em;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /* Decoração lateral */
+    .side-deco {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .side-deco-l { left: 16px; }
+    .side-deco-r { right: 16px; }
+
+    .side-pip {
+      width: 12px;
+      height: 12px;
+      background: var(--verde-claro);
+      border: 2px solid var(--verde-escuro);
+    }
+    .side-pip.pip-yellow { background: var(--amarelo-ouro); }
+    .side-pip.pip-brown  { background: var(--marrom-claro); }
+    .side-pip.pip-blue   { background: var(--azul-claro); }
+
+    @media (max-width: 768px) {
+      .side-deco { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Plano de fundo com selva pixel art -->
+  <div class="bg-scene" role="presentation"></div>
+
+  <!-- Scanlines (efeito CRT) -->
+  <div class="scanlines" role="presentation"></div>
+  <div class="crt-vignette" role="presentation"></div>
+
+  <!-- Decorações laterais pixel -->
+  <div class="side-deco side-deco-l" aria-hidden="true">
+    <div class="side-pip"></div>
+    <div class="side-pip pip-yellow"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-brown"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-blue"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-yellow"></div>
+    <div class="side-pip"></div>
+  </div>
+  <div class="side-deco side-deco-r" aria-hidden="true">
+    <div class="side-pip"></div>
+    <div class="side-pip pip-blue"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-yellow"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-brown"></div>
+    <div class="side-pip"></div>
+    <div class="side-pip pip-blue"></div>
+    <div class="side-pip"></div>
+  </div>
+
+  <!-- Folhas decorativas nos cantos -->
+  <div class="pixel-leaves leaf-tl" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-tr" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-bl" aria-hidden="true">🍃</div>
+  <div class="pixel-leaves leaf-br" aria-hidden="true">🍃</div>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════ -->
+  <main class="page-wrapper" id="main-content">
+
+    <div class="retro-panel" role="main" aria-label="Menu principal do GoEvo">
+
+      <!-- Cantos decorativos -->
+      <div class="corner-tl" aria-hidden="true"></div>
+      <div class="corner-tr" style="position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+      <div class="corner-br" aria-hidden="true"></div>
+      <div class="corner-bl" style="position:absolute;bottom:-4px;left:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+
+      <!-- Logo principal -->
+      <div class="logo-wrapper">
+        <img
+          src="logo_goevo.jpg"
+          alt="GoEvo — Corrida para a Evolução"
+          class="logo-img"
+          width="380"
+          height="253"
+        />
+      </div>
+
+      <!-- DNA decorativo -->
+      <div class="dna-deco" aria-hidden="true">≋ A T G C A T G C ≋</div>
+
+      <!-- Divisor pixel -->
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- "Pressione Iniciar" piscando -->
+      <p class="press-start" aria-live="polite">— SELECIONE UMA OPÇÃO —</p>
+
+      <!-- ── MENU PRINCIPAL ── -->
+      <nav class="main-menu" aria-label="Opções do menu principal">
+
+        <a href="cadastro.html"
+           id="btn-iniciar"
+           class="btn-retro btn-green"
+           role="button"
+           aria-label="Iniciar o jogo — ir para cadastro">
+          ▶&nbsp;&nbsp;INICIAR
+        </a>
+
+        <a href="opcoes.html"
+           id="btn-opcoes"
+           class="btn-retro btn-yellow"
+           role="button"
+           aria-label="Abrir tela de opções">
+          ⚙&nbsp;&nbsp;OPÇÕES
+        </a>
+
+        <a href="creditos.html"
+           id="btn-creditos"
+           class="btn-retro btn-brown"
+           role="button"
+           aria-label="Ver créditos do jogo">
+          ★&nbsp;&nbsp;CRÉDITOS
+        </a>
+
+        <a href="javascript:void(0)"
+           onclick="window.open('', '_self').close(); window.close();"
+           id="btn-sair"
+           class="btn-retro btn-blue"
+           role="button"
+           aria-label="Sair do jogo"
+           title="Sair do jogo">
+          ✕&nbsp;&nbsp;SAIR
+        </a>
+
+      </nav>
+
+      <!-- Divisor -->
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- HP Bar decorativa -->
+      <div class="hp-bar-wrapper" aria-hidden="true">
+        <span class="hp-label">EXP</span>
+        <div class="hp-bar">
+          <div class="hp-pip"></div>
+          <div class="hp-pip"></div>
+          <div class="hp-pip"></div>
+          <div class="hp-pip"></div>
+          <div class="hp-pip"></div>
+          <div class="hp-pip empty"></div>
+          <div class="hp-pip empty"></div>
+          <div class="hp-pip empty"></div>
+        </div>
+      </div>
+
+      <!-- Versão -->
+      <div class="version-badge" aria-label="Versão do jogo">v0.1.0 &nbsp;|&nbsp; ALFA</div>
+
+    </div><!-- /retro-panel -->
+
+  </main>
+
+  <!-- ── STATUS BAR (rodapé) ── -->
+  <footer class="status-bar" role="contentinfo" aria-label="Barra de status">
+    <span class="status-text">
+      <span class="status-dot" aria-hidden="true"></span>
+      GOEVO CARREGADO
+    </span>
+    <span class="status-text">🌿 BIOLOGIA EVOLUTIVA</span>
+    <span class="status-text">📍 BRASIL</span>
+  </footer>
+
+</body>
+</html>

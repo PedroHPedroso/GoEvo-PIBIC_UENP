@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoEvo — Cadastro do jogador. Crie seu perfil para começar a aventura de biologia evolutiva!" />
+  <title>GoEvo — Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Estilos exclusivos da tela de Cadastro ── */
+
+    /* Painel de cadastro um pouco mais largo */
+    .retro-panel {
+      max-width: 700px;
+    }
+
+    /* Ícone de personagem placeholder */
+    .player-avatar {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+      filter: drop-shadow(0 0 8px var(--verde-neon));
+      animation: logo-pulse 2.5s ease-in-out infinite;
+    }
+
+    /* Dois campos lado a lado em telas maiores */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 520px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Indicador de validação inline */
+    .field-valid-indicator {
+      display: none;
+      font-family: var(--fonte-display);
+      font-size: 1rem;
+      color: var(--verde-neon);
+      letter-spacing: 0.05em;
+    }
+
+    /* Mostrar o indicador quando o input é válido e não placeholder */
+    .form-input:valid:not(:placeholder-shown) ~ .field-valid-indicator {
+      display: block;
+    }
+
+    /* Mensagem de erro inline */
+    .field-error-msg {
+      display: none;
+      font-family: var(--fonte-display);
+      font-size: 1rem;
+      color: #e57373;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input:invalid:not(:placeholder-shown) ~ .field-error-msg {
+      display: block;
+    }
+
+    /* Wrapper do ícone de validação ao lado do input */
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-wrapper .form-input {
+      padding-right: 2.5rem;
+    }
+
+    .input-check-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .form-input:valid:not(:placeholder-shown) ~ .input-check-icon {
+      opacity: 1;
+      color: var(--verde-neon);
+    }
+
+    /* Barra de progresso dos campos preenchidos */
+    .progress-section {
+      margin-bottom: 1rem;
+    }
+
+    .progress-label {
+      font-family: var(--fonte-pixel);
+      font-size: 0.5rem;
+      color: var(--verde-claro);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 12px;
+      background: var(--verde-escuro);
+      border: 3px solid var(--verde-medio);
+      border-top-color: var(--verde-escuro);
+      border-left-color: var(--verde-escuro);
+      overflow: hidden;
+      image-rendering: pixelated;
+    }
+
+    /* A barra se expande conforme os campos ficam válidos usando CSS :has() */
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--verde-medio), var(--verde-neon));
+      width: 0%;
+      transition: width 0.4s;
+      image-rendering: pixelated;
+    }
+
+    /* Cada campo válido contribui +25% (4 campos ao total) */
+    form:has(#nome:valid:not(:placeholder-shown)) .progress-fill {
+      width: 25%;
+    }
+
+    form:has(#nome:valid:not(:placeholder-shown)):has(#idade:valid:not(:placeholder-shown)) .progress-fill {
+      width: 50%;
+    }
+
+    form:has(#nome:valid:not(:placeholder-shown)):has(#idade:valid:not(:placeholder-shown)):has(#instituicao:valid:not(:placeholder-shown)) .progress-fill {
+      width: 75%;
+    }
+
+    form:not(:has(input:invalid)):not(:has(select:invalid)) .progress-fill {
+      width: 100%;
+      background: linear-gradient(90deg, var(--verde-claro), var(--verde-neon));
+      box-shadow: 0 0 8px var(--verde-neon);
+    }
+
+    /* Nota de campos obrigatórios */
+    .required-note {
+      font-family: var(--fonte-display);
+      font-size: 1rem;
+      color: var(--amarelo-ouro);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    /* Botão voltar */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--fonte-pixel);
+      font-size: 0.55rem;
+      color: var(--verde-claro);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      transition: opacity 0.15s, color 0.15s;
+      margin-bottom: 1rem;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      color: var(--verde-neon);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo -->
+  <div class="bg-scene" role="presentation"></div>
+  <div class="scanlines" role="presentation"></div>
+  <div class="crt-vignette" role="presentation"></div>
+
+  <!-- Folhas decorativas -->
+  <div class="pixel-leaves leaf-tl" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-tr" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-bl" aria-hidden="true">🍃</div>
+  <div class="pixel-leaves leaf-br" aria-hidden="true">🍃</div>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════ -->
+  <main class="page-wrapper" id="main-content">
+
+    <div class="retro-panel" role="main" aria-label="Formulário de cadastro do jogador">
+
+      <!-- Cantos decorativos -->
+      <div class="corner-tl" aria-hidden="true"></div>
+      <div class="corner-tr" style="position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+      <div class="corner-br" aria-hidden="true"></div>
+      <div class="corner-bl" style="position:absolute;bottom:-4px;left:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+
+      <!-- Link de voltar -->
+      <a href="index.html" class="back-link" aria-label="Voltar ao menu principal">◄ MENU PRINCIPAL</a>
+
+      <!-- Avatar e título -->
+      <div class="player-avatar" aria-hidden="true">🧬</div>
+
+      <h1 class="page-title">NOVO EXPLORADOR</h1>
+      <p class="page-subtitle">Crie seu perfil de pesquisador</p>
+
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- Nota de obrigatórios -->
+      <p class="required-note" role="note">
+        ◆ Todos os campos são obrigatórios
+      </p>
+
+      <!-- ── FORMULÁRIO ── -->
+      <form
+        id="form-cadastro"
+        action="#"
+        method="post"
+        novalidate
+        aria-label="Formulário de cadastro"
+      >
+
+        <!-- Barra de progresso -->
+        <section class="progress-section" aria-label="Progresso do preenchimento">
+          <p class="progress-label">PROGRESSO DO CADASTRO</p>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Campos preenchidos">
+            <div class="progress-fill"></div>
+          </div>
+        </section>
+
+        <!-- ── CAMPO: Nome ── -->
+        <div class="form-group">
+          <label class="form-label" for="nome">
+            NOME DO EXPLORADOR <span class="required" aria-hidden="true">★</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              class="form-input"
+              placeholder="Ex: Darwin Silva"
+              required
+              minlength="2"
+              maxlength="50"
+              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,50}"
+              autocomplete="given-name"
+              aria-required="true"
+              aria-describedby="nome-hint nome-error"
+              title="Apenas letras e espaços (sem números ou caracteres especiais)"
+            />
+            <span class="input-check-icon" aria-hidden="true">✔</span>
+          </div>
+          <span class="field-valid-indicator" aria-live="polite">✔ Nome válido!</span>
+          <span class="field-error-msg" id="nome-error" aria-live="polite" role="alert">✘ Apenas letras e espaços (mín. 2, máx. 50 caracteres)</span>
+          <span class="form-hint" id="nome-hint">Máx. 50 caracteres · Somente letras</span>
+        </div>
+
+        <!-- ── CAMPO: Idade ── -->
+        <div class="form-group">
+          <label class="form-label" for="idade">
+            IDADE <span class="required" aria-hidden="true">★</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="number"
+              id="idade"
+              name="idade"
+              class="form-input"
+              placeholder="Ex: 15"
+              required
+              min="1"
+              max="100"
+              step="1"
+              autocomplete="off"
+              aria-required="true"
+              aria-describedby="idade-hint idade-error"
+              title="Digite sua idade (1 a 100 anos)"
+            />
+            <span class="input-check-icon" aria-hidden="true">✔</span>
+          </div>
+          <span class="field-valid-indicator" aria-live="polite">✔ Idade válida!</span>
+          <span class="field-error-msg" id="idade-error" aria-live="polite" role="alert">✘ Insira uma idade entre 1 e 100 anos</span>
+          <span class="form-hint" id="idade-hint">Apenas números · 1 a 100 anos</span>
+        </div>
+
+        <!-- ── CAMPO: Instituição ── -->
+        <div class="form-group">
+          <label class="form-label" for="instituicao">
+            INSTITUIÇÃO DE ENSINO <span class="required" aria-hidden="true">★</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="instituicao"
+              name="instituicao"
+              class="form-input"
+              placeholder="Ex: Escola Estadual Prof. Mendel"
+              required
+              minlength="3"
+              maxlength="100"
+              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s\.]{3,100}"
+              autocomplete="organization"
+              aria-required="true"
+              aria-describedby="inst-hint inst-error"
+              title="Apenas letras e espaços (sem números ou caracteres especiais)"
+            />
+            <span class="input-check-icon" aria-hidden="true">✔</span>
+          </div>
+          <span class="field-valid-indicator" aria-live="polite">✔ Instituição válida!</span>
+          <span class="field-error-msg" id="inst-error" aria-live="polite" role="alert">✘ Apenas letras e espaços (mín. 3, máx. 100 caracteres)</span>
+          <span class="form-hint" id="inst-hint">Máx. 100 caracteres · Somente letras</span>
+        </div>
+
+        <!-- ── CAMPO: Nível de Ensino ── -->
+        <div class="form-group">
+          <label class="form-label" for="nivel">
+            NÍVEL DE ENSINO <span class="required" aria-hidden="true">★</span>
+          </label>
+          <select
+            id="nivel"
+            name="nivel"
+            class="form-select"
+            required
+            aria-required="true"
+            aria-describedby="nivel-hint nivel-error"
+          >
+            <option value="" disabled selected>— SELECIONE SEU NÍVEL —</option>
+            <option value="fundamental1">Ensino Fundamental I</option>
+            <option value="fundamental2">Ensino Fundamental II</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="outros">Outros</option>
+          </select>
+          <span class="form-hint" id="nivel-hint">Selecione o nível que corresponde à sua situação</span>
+          <span class="field-error-msg" id="nivel-error" aria-live="polite" role="alert">✘ Por favor, selecione um nível de ensino</span>
+        </div>
+
+        <!-- ── BOTÃO FINALIZAR (CSS-only: aparece quando form válido) ── -->
+        <div class="submit-wrapper" aria-live="polite">
+          <button
+            type="submit"
+            id="btn-finalizar"
+            class="btn-retro btn-green"
+            aria-label="Finalizar cadastro e iniciar o jogo"
+          >
+            ▶&nbsp;&nbsp;INICIAR AVENTURA!
+          </button>
+        </div>
+
+      </form><!-- /form-cadastro -->
+
+    </div><!-- /retro-panel -->
+
+  </main>
+
+  <!-- STATUS BAR -->
+  <footer class="status-bar" role="contentinfo" aria-label="Barra de status">
+    <span class="status-text">
+      <span class="status-dot" aria-hidden="true"></span>
+      CADASTRO
+    </span>
+    <span class="status-text">🧬 CRIE SEU EXPLORADOR</span>
+    <span class="status-text">★ NÍVEL 1</span>
+  </footer>
+
+</body>
+</html>

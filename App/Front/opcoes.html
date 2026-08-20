@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoEvo — Opções do jogo. Ajuste o volume do som e outras configurações." />
+  <title>GoEvo — Opções</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Estilos exclusivos da tela de Opções ── */
+
+    .opcoes-section {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .opcoes-section-title {
+      font-family: var(--fonte-pixel);
+      font-size: 0.55rem;
+      color: var(--verde-claro);
+      letter-spacing: 0.15em;
+      text-shadow: 1px 1px 0 var(--verde-escuro);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--verde-floresta);
+    }
+
+    /* Row de opção */
+    .option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(74, 154, 42, 0.2);
+    }
+
+    .option-row:last-child {
+      border-bottom: none;
+    }
+
+    .option-label {
+      font-family: var(--fonte-pixel);
+      font-size: 0.6rem;
+      color: var(--amarelo-claro);
+      letter-spacing: 0.08em;
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+
+    .option-control {
+      flex: 1;
+    }
+
+    /* Valor do slider mostrado ao lado */
+    .slider-value {
+      font-family: var(--fonte-display);
+      font-size: 1.4rem;
+      color: var(--amarelo-ouro);
+      min-width: 50px;
+      text-align: right;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 8px rgba(212, 160, 0, 0.5);
+    }
+
+    /* Ícones de som */
+    .sound-icon-min,
+    .sound-icon-max {
+      font-family: var(--fonte-display);
+      font-size: 1.2rem;
+      color: var(--verde-medio);
+      flex-shrink: 0;
+    }
+
+    /* Grupo do slider completo */
+    .slider-full-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    /* Ticks decorativos abaixo do slider */
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2px;
+      margin-top: 4px;
+    }
+
+    .tick {
+      font-family: var(--fonte-display);
+      font-size: 0.85rem;
+      color: rgba(150, 200, 100, 0.45);
+    }
+
+    /* Ícone de opção */
+    .option-icon {
+      font-size: 1.6rem;
+      filter: drop-shadow(0 0 6px var(--verde-neon));
+      flex-shrink: 0;
+    }
+
+    /* Nota informativa */
+    .info-note {
+      font-family: var(--fonte-display);
+      font-size: 1rem;
+      color: rgba(150, 200, 100, 0.55);
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* Botão voltar grande */
+    .btn-back-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    /* Painel de opções */
+    .options-panel {
+      background: rgba(10, 26, 10, 0.6);
+      border: 2px solid var(--verde-floresta);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo -->
+  <div class="bg-scene" role="presentation"></div>
+  <div class="scanlines" role="presentation"></div>
+  <div class="crt-vignette" role="presentation"></div>
+
+  <!-- Folhas decorativas -->
+  <div class="pixel-leaves leaf-tl" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-tr" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-bl" aria-hidden="true">🍃</div>
+  <div class="pixel-leaves leaf-br" aria-hidden="true">🍃</div>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════ -->
+  <main class="page-wrapper" id="main-content">
+
+    <div class="retro-panel" role="main" aria-label="Tela de opções do jogo">
+
+      <!-- Cantos decorativos -->
+      <div class="corner-tl" aria-hidden="true"></div>
+      <div class="corner-tr" style="position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+      <div class="corner-br" aria-hidden="true"></div>
+      <div class="corner-bl" style="position:absolute;bottom:-4px;left:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+
+      <!-- Título -->
+      <div class="player-avatar" style="text-align:center;font-size:2.5rem;margin-bottom:.25rem;filter:drop-shadow(0 0 8px var(--amarelo-ouro));animation:logo-pulse 2.5s ease-in-out infinite;" aria-hidden="true">⚙</div>
+
+      <h1 class="page-title">OPÇÕES</h1>
+      <p class="page-subtitle">Configurações do jogo</p>
+
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- ── SEÇÃO: ÁUDIO ── -->
+      <section class="opcoes-section" aria-label="Configurações de áudio">
+        <p class="opcoes-section-title">♪ ÁUDIO</p>
+
+        <div class="options-panel">
+          <!-- Controle de Som -->
+          <div class="option-row">
+            <span class="option-icon" aria-hidden="true">🔊</span>
+            <label class="option-label" for="volume-som" id="label-volume-som">
+              SOM
+            </label>
+            <div class="option-control" role="group" aria-labelledby="label-volume-som">
+              <div class="slider-full-group">
+                <span class="sound-icon-min" aria-hidden="true">🔇</span>
+
+                <div style="flex:1;">
+                  <input
+                    type="range"
+                    id="volume-som"
+                    name="volume-som"
+                    min="0"
+                    max="100"
+                    value="70"
+                    step="1"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="70"
+                    aria-label="Controle de volume do som (0 a 100)"
+                  />
+                  <!-- Ticks decorativos -->
+                  <div class="slider-ticks" aria-hidden="true">
+                    <span class="tick">0</span>
+                    <span class="tick">25</span>
+                    <span class="tick">50</span>
+                    <span class="tick">75</span>
+                    <span class="tick">100</span>
+                  </div>
+                </div>
+
+                <span class="sound-icon-max" aria-hidden="true">🔊</span>
+              </div>
+            </div>
+            <span class="slider-value" aria-live="polite" aria-label="Volume atual: 70">70</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── NOTA INFORMATIVA ── -->
+      <p class="info-note" role="note">
+        ◆ As configurações serão salvas<br/>
+        quando o jogo iniciar
+      </p>
+
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- ── BOTÃO VOLTAR ── -->
+      <div class="btn-back-wrapper">
+        <a
+          href="index.html"
+          id="btn-voltar-opcoes"
+          class="btn-retro btn-brown"
+          role="button"
+          aria-label="Voltar ao menu principal"
+        >
+          ◄&nbsp;&nbsp;VOLTAR
+        </a>
+      </div>
+
+    </div><!-- /retro-panel -->
+
+  </main>
+
+  <!-- STATUS BAR -->
+  <footer class="status-bar" role="contentinfo" aria-label="Barra de status">
+    <span class="status-text">
+      <span class="status-dot" aria-hidden="true"></span>
+      OPÇÕES
+    </span>
+    <span class="status-text">⚙ CONFIGURAÇÕES</span>
+    <span class="status-text">🔊 SOM: 70%</span>
+  </footer>
+
+</body>
+</html>

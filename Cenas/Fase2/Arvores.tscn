@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpjp7orev3sp5"]
+
+[ext_resource type="Script" uid="uid://ffcyo2d4jl62" path="res://Scripts/arvore.gd" id="1_3h47s"]
+[ext_resource type="Texture2D" uid="uid://ctb4jx6vomdk7" path="res://Animações/Fase2/Cenario/Troncos.png" id="2_8pymu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h47s"]
+
+[node name="Arvore" type="Area2D" unique_id=1741090095 groups=["arvores"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_3h47s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527798185]
+shape = SubResource("RectangleShape2D_3h47s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796749762]
+texture = ExtResource("2_8pymu")
+hframes = 8
+vframes = 8

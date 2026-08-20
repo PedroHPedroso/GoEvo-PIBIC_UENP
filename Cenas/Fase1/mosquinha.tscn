@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://c4iy54wjr51yn"]
+
+[ext_resource type="Script" uid="uid://d6sgi1t16ne8" path="res://Scripts/mosquinha.gd" id="1_3yeut"]
+[ext_resource type="Texture2D" uid="uid://8paw1r3v31x8" path="res://Animações/Moscas.png" id="2_3asqx"]
+[ext_resource type="Script" uid="uid://cns5akhgqpmvf" path="res://Scripts/hurtbox.gd" id="3_3asqx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ooua1"]
+radius = 11.045361
+
+[sub_resource type="Animation" id="Animation_ouute"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mosca:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3asqx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mosca:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mosca:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_efqqi"]
+resource_name = "flying"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mosca:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3asqx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mosca:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mosca:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jox2n"]
+_data = {
+&"RESET": SubResource("Animation_ouute"),
+&"flying": SubResource("Animation_efqqi")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxs28"]
+
+[node name="Mosquinha" type="CharacterBody2D" unique_id=29084138]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_3yeut")
+
+[node name="Mosca" type="Sprite2D" parent="." unique_id=1670566443]
+scale = Vector2(0.84375, 0.78125)
+texture = ExtResource("2_3asqx")
+hframes = 8
+
+[node name="colliEnemy" type="CollisionShape2D" parent="." unique_id=819499777]
+visible = false
+shape = SubResource("CircleShape2D_ooua1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1665244725]
+libraries/ = SubResource("AnimationLibrary_jox2n")
+autoplay = &"flying"
+speed_scale = 0.5
+movie_quit_on_finish = true
+
+[node name="wallDetector" type="RayCast2D" parent="." unique_id=206123876]
+position = Vector2(0, 6)
+target_position = Vector2(-16, -6)
+collision_mask = 6
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1497440215 groups=["hurtbox_mosca"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("3_3asqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2000862688]
+shape = SubResource("CircleShape2D_rxs28")

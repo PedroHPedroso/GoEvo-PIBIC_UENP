@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bs5q2j40acghl"]
+
+[ext_resource type="Script" uid="uid://du03qt171i7qt" path="res://Scripts/predador.gd" id="1_12nxm"]
+[ext_resource type="Texture2D" uid="uid://babckfy8m567m" path="res://IconeMosca.png" id="2_f17np"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3h47s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12nxm"]
+
+[node name="Predador" type="CharacterBody2D" unique_id=848189429]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_12nxm")
+velocidade_mergulho = null
+velocidade_retorno = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=238747421]
+shape = SubResource("CapsuleShape2D_3h47s")
+
+[node name="HitboxArea" type="Area2D" parent="." unique_id=1672444672]
+collision_layer = 0
+
+[node name="HitboxArea" type="CollisionShape2D" parent="HitboxArea" unique_id=600138537]
+shape = SubResource("RectangleShape2D_12nxm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2024384579]
+texture = ExtResource("2_f17np")
+
+[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]

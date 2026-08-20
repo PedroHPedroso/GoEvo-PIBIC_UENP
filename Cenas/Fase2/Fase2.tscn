@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://bd30lnx058olf"]
+
+[ext_resource type="Script" uid="uid://ccec66rth6rgo" path="res://Scripts/fase_2.gd" id="1_chmkc"]
+[ext_resource type="PackedScene" uid="uid://bw5hxhryk0hfb" path="res://Cenas/Fase2/PlayerMariposa.tscn" id="2_y4blh"]
+[ext_resource type="PackedScene" uid="uid://bs5q2j40acghl" path="res://Cenas/Fase2/predador.tscn" id="3_6u704"]
+[ext_resource type="PackedScene" uid="uid://dpjp7orev3sp5" path="res://Cenas/Fase2/Arvores.tscn" id="4_d6765"]
+[ext_resource type="FontFile" uid="uid://vbwj8al8o7qa" path="res://Fonts/determination.ttf" id="5_y4blh"]
+[ext_resource type="Texture2D" uid="uid://dmyndf3t1wt7h" path="res://Animações/Fase2/Cenario/Cenarios.png" id="6_d6765"]
+[ext_resource type="Texture2D" uid="uid://ctb4jx6vomdk7" path="res://Animações/Fase2/Cenario/Troncos.png" id="7_274hw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wn61"]
+texture = ExtResource("6_d6765")
+margins = Vector2i(0, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8d303"]
+texture = ExtResource("7_274hw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rxs28"]
+sources/0 = SubResource("TileSetAtlasSource_1wn61")
+sources/1 = SubResource("TileSetAtlasSource_8d303")
+
+[node name="Fase2" type="Node2D" unique_id=809446226]
+script = ExtResource("1_chmkc")
+
+[node name="PlayerMariposa" parent="." unique_id=1732973073 instance=ExtResource("2_y4blh")]
+position = Vector2(338, 240)
+
+[node name="Predador" parent="." unique_id=848189429 instance=ExtResource("3_6u704")]
+position = Vector2(630, 10)
+
+[node name="Troncos" type="Node2D" parent="." unique_id=2080448899]
+
+[node name="arvore" parent="Troncos" unique_id=1741090095 instance=ExtResource("4_d6765")]
+position = Vector2(328, 216)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=45243575]
+
+[node name="SelecaoCorPanel" type="Control" parent="HUD" unique_id=1429641784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="HUD/SelecaoCorPanel" unique_id=43452846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.05, 0.035, 0.88)
+
+[node name="Titulo" type="Label" parent="HUD/SelecaoCorPanel" unique_id=642270279]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 72.0
+offset_right = 485.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 22
+text = "Escolha sua mariposa"
+horizontal_alignment = 1
+
+[node name="Instrucao" type="Label" parent="HUD/SelecaoCorPanel" unique_id=1278254219]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 108.0
+offset_right = 520.0
+offset_bottom = 136.0
+text = "Escolha a cor que melhor se camufla nas árvores"
+horizontal_alignment = 1
+
+[node name="BtnBranca" type="Button" parent="HUD/SelecaoCorPanel" unique_id=358978063]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 165.0
+offset_right = 225.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_y4blh")
+theme_override_font_sizes/font_size = 18
+text = "Branca"
+
+[node name="BtnMarrom" type="Button" parent="HUD/SelecaoCorPanel" unique_id=721115063]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 165.0
+offset_right = 395.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6862745, 0.41960785, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("5_y4blh")
+theme_override_font_sizes/font_size = 18
+text = "Marrom"
+
+[node name="BtnPreta" type="Button" parent="HUD/SelecaoCorPanel" unique_id=295640935]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 165.0
+offset_right = 565.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Preta"
+
+[node name="FeedbackLabel" type="Label" parent="HUD" unique_id=1791544606]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=778023091]
+tile_set = SubResource("TileSet_rxs28")
+
+[connection signal="camuflagem_concluida" from="PlayerMariposa" to="." method="_on_player_mariposa_camuflagem_concluida"]
+[connection signal="pressed" from="HUD/SelecaoCorPanel/BtnBranca" to="." method="_on_btn_branca_pressed"]
+[connection signal="pressed" from="HUD/SelecaoCorPanel/BtnMarrom" to="." method="_on_btn_marrom_pressed"]
+[connection signal="pressed" from="HUD/SelecaoCorPanel/BtnPreta" to="." method="_on_btn_preta_pressed"]

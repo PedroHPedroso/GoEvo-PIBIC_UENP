@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoEvo — Créditos do jogo. Conheça a equipe por trás do jogo educacional de biologia evolutiva." />
+  <title>GoEvo — Créditos</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Estilos exclusivos de Créditos ── */
+
+    /* Scroll de créditos estilo rolagem de cinema */
+    .credits-scroll {
+      width: 100%;
+      overflow: hidden;
+      height: 380px;
+      position: relative;
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+      );
+    }
+
+    .credits-inner {
+      animation: credits-roll 22s linear infinite;
+      padding: 2rem 0;
+    }
+
+    .credits-inner:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes credits-roll {
+      0%   { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
+    }
+
+    /* Bloco de crédito */
+    .credit-block {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .credit-role {
+      font-family: var(--fonte-pixel);
+      font-size: 0.5rem;
+      color: var(--verde-claro);
+      letter-spacing: 0.15em;
+      text-shadow: 1px 1px 0 var(--verde-escuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .credit-name {
+      font-family: var(--fonte-display);
+      font-size: 1.6rem;
+      color: var(--amarelo-claro);
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 0 var(--marrom-escuro), 0 0 10px rgba(212, 160, 0, 0.4);
+    }
+
+    .credit-name.highlight {
+      font-size: 1.9rem;
+      color: var(--verde-neon);
+      text-shadow: 0 0 12px var(--verde-neon), 2px 2px 0 var(--verde-escuro);
+    }
+
+    .credit-separator {
+      width: 60%;
+      height: 2px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--verde-floresta) 0px, var(--verde-floresta) 6px,
+        transparent 6px, transparent 10px
+      );
+      margin: 1.5rem auto;
+    }
+
+    .credit-logo-text {
+      font-family: var(--fonte-display);
+      font-size: 2.5rem;
+      color: var(--verde-neon);
+      text-shadow:
+        0 0 16px var(--verde-neon),
+        0 0 32px rgba(57,255,20,0.5),
+        4px 4px 0 var(--verde-escuro);
+      letter-spacing: 0.25em;
+    }
+
+    .credit-tagline {
+      font-family: var(--fonte-display);
+      font-size: 1.2rem;
+      color: var(--amarelo-ouro);
+      letter-spacing: 0.2em;
+      opacity: 0.8;
+      margin-top: 0.25rem;
+    }
+
+    .credit-dna {
+      font-family: var(--fonte-display);
+      font-size: 1rem;
+      color: var(--verde-medio);
+      letter-spacing: 0.4em;
+      opacity: 0.5;
+      margin: 0.5rem 0;
+    }
+
+    .credit-special {
+      font-family: var(--fonte-display);
+      font-size: 1.3rem;
+      color: var(--marrom-areia);
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+    }
+
+    /* Dica de hover */
+    .hover-hint {
+      font-family: var(--fonte-display);
+      font-size: 0.95rem;
+      color: rgba(150, 200, 100, 0.5);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+      animation: blink-slow 2s step-end infinite;
+    }
+
+    /* Botão voltar */
+    .btn-back-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo -->
+  <div class="bg-scene" role="presentation"></div>
+  <div class="scanlines" role="presentation"></div>
+  <div class="crt-vignette" role="presentation"></div>
+
+  <!-- Folhas decorativas -->
+  <div class="pixel-leaves leaf-tl" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-tr" aria-hidden="true">🌿</div>
+  <div class="pixel-leaves leaf-bl" aria-hidden="true">🍃</div>
+  <div class="pixel-leaves leaf-br" aria-hidden="true">🍃</div>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════ -->
+  <main class="page-wrapper" id="main-content">
+
+    <div class="retro-panel" role="main" aria-label="Créditos do jogo GoEvo">
+
+      <!-- Cantos decorativos -->
+      <div class="corner-tl" aria-hidden="true"></div>
+      <div class="corner-tr" style="position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+      <div class="corner-br" aria-hidden="true"></div>
+      <div class="corner-bl" style="position:absolute;bottom:-4px;left:-4px;width:16px;height:16px;background:var(--amarelo-ouro);" aria-hidden="true"></div>
+
+      <!-- Título -->
+      <div style="text-align:center;font-size:2.2rem;margin-bottom:.25rem;filter:drop-shadow(0 0 8px var(--amarelo-ouro));animation:logo-pulse 2.5s ease-in-out infinite;" aria-hidden="true">★</div>
+
+      <h1 class="page-title">CRÉDITOS</h1>
+      <p class="page-subtitle">A equipe por trás da aventura</p>
+
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- Dica de pause -->
+      <p class="hover-hint" aria-label="Dica: passe o mouse para pausar">⏸ Passe o mouse para pausar</p>
+
+      <!-- ── SCROLL DE CRÉDITOS ── -->
+      <div class="credits-scroll" role="region" aria-label="Rolagem de créditos">
+        <div class="credits-inner">
+
+          <!-- Logo -->
+          <div class="credit-block">
+            <p class="credit-logo-text">GoEvo</p>
+            <p class="credit-tagline">CORRIDA PARA A EVOLUÇÃO</p>
+            <p class="credit-dna">≋ A T G C ≋</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Realização -->
+          <div class="credit-block">
+            <p class="credit-role">REALIZAÇÃO</p>
+            <p class="credit-name highlight">UENP</p>
+            <p class="credit-special">Universidade Estadual do Norte do Paraná</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Apoio -->
+          <div class="credit-block">
+            <p class="credit-role">COLABORAÇÃO &amp; APOIO</p>
+            <p class="credit-name highlight">Fundação Araucária</p>
+            <p class="credit-special">Apoio ao Desenvolvimento Científico e Tecnológico</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Game Design -->
+          <div class="credit-block">
+            <p class="credit-role">GAME DESIGN</p>
+            <p class="credit-name">Pedro Henrique Pedroso</p>
+            <p class="credit-name">Natalia Sanches Luz</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Arte & Pixel Art -->
+          <div class="credit-block">
+            <p class="credit-role">ARTE &amp; PIXEL ART</p>
+            <p class="credit-name">Pedro Henrique Pedroso</p>
+            <p class="credit-name">Natalia Sanches Luz</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Conteúdo Científico -->
+          <div class="credit-block">
+            <p class="credit-role">CONSULTORIA CIENTÍFICA</p>
+            <p class="credit-name">Centro de Ciências Biológicas - CCB (UENP)</p>
+            <p class="credit-name">Profa. Dr. Priscila Caroza Frasson Costa</p>
+            <p class="credit-special">Biologia Evolutiva &amp; Ecologia</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Trilha Sonora -->
+          <div class="credit-block">
+            <p class="credit-role">TRILHA SONORA</p>
+            <p class="credit-name">Pedro Henrique Pedroso</p>
+            <p class="credit-name">Natalia Sanches Luz</p>
+            <p class="credit-special">Chiptune &amp; Ambiental</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Agradecimentos -->
+          <div class="credit-block">
+            <p class="credit-role">AGRADECIMENTOS ESPECIAIS</p>
+            <p class="credit-special">
+              A todos os estudantes<br />
+              e professores do Brasil 🇧🇷<br />
+              que tornam a ciência<br />
+              um caminho de descoberta
+            </p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Inspirações -->
+          <div class="credit-block">
+            <p class="credit-role">INSPIRADO EM</p>
+            <p class="credit-name">Charles Darwin</p>
+            <p class="credit-name">Alfred Russel Wallace</p>
+            <p class="credit-name">Ernst Mayr</p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Tecnologias -->
+          <div class="credit-block">
+            <p class="credit-role">DESENVOLVIDO COM</p>
+            <p class="credit-special">
+              GODOT ENGINE - C# - HTML - CSS<br />
+              Amor pela Ciência Brasileira 🌿
+            </p>
+          </div>
+
+          <div class="credit-separator" aria-hidden="true"></div>
+
+          <!-- Versão -->
+          <div class="credit-block">
+            <p class="credit-role">VERSÃO</p>
+            <p class="credit-name">v0.1.0 — ALFA</p>
+            <p class="credit-dna">© GoEvo 2026 — Brasil</p>
+          </div>
+
+          <!-- DNA final -->
+          <div class="credit-block">
+            <p class="credit-dna">≋ G A T A C A ≋</p>
+            <p style="font-family:var(--fonte-display);font-size:2rem;color:var(--verde-neon);text-shadow:0 0 12px var(--verde-neon);">FIM</p>
+          </div>
+
+        </div><!-- /credits-inner -->
+      </div><!-- /credits-scroll -->
+
+      <div class="pixel-divider" role="separator"></div>
+
+      <!-- Botão Voltar -->
+      <div class="btn-back-wrapper">
+        <a
+          href="index.html"
+          id="btn-voltar-creditos"
+          class="btn-retro btn-brown"
+          role="button"
+          aria-label="Voltar ao menu principal"
+        >
+          ◄&nbsp;&nbsp;VOLTAR
+        </a>
+      </div>
+
+    </div><!-- /retro-panel -->
+
+  </main>
+
+  <!-- STATUS BAR -->
+  <footer class="status-bar" role="contentinfo" aria-label="Barra de status">
+    <span class="status-text">
+      <span class="status-dot" aria-hidden="true"></span>
+      CRÉDITOS
+    </span>
+    <span class="status-text">★ EQUIPE GOEVO</span>
+    <span class="status-text">🌿 OBRIGADO!</span>
+  </footer>
+
+</body>
+</html>
