@@ -1,20 +1,14 @@
 extends Node2D
 
-const ASSET_ROOT := "res://Animações/Fase3/Sprites/"
+const ASSET_ROOT := "res://Animações/Fase3/Sprites/AssetsFase/"
+
+@onready var sprite: Sprite2D = $Sprite2D
 
 var pigment_color := Color.WHITE
 var pigment_name := ""
 var checkpoint := 0
 var active := true
 var bob_time := 0.0
-var sprite: Sprite2D
-
-func _ready() -> void:
-	sprite = Sprite2D.new()
-	sprite.name = "PigmentoSprite"
-	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	add_child(sprite)
-
 func setup(color_value: Color, name_value: String, checkpoint_value: int) -> void:
 	pigment_color = color_value
 	pigment_name = name_value

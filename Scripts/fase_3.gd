@@ -1,7 +1,6 @@
 extends Node2D
 
-const PlayerSnake = preload("res://Scripts/player_cobra.gd")
-const Pigment = preload("res://Scripts/pigmento_fase_3.gd")
+const PigmentScene := preload("res://Cenas/Fase3/pigmento.tscn")
 const Predator = preload("res://Scripts/predador_fase_3.gd")
 
 const RED := Color("db3f3f")
@@ -10,6 +9,10 @@ const BLACK := Color("202225")
 const TARGET_NAMES := ["Vermelho", "Amarelo", "Preto", "Amarelo", "Vermelho"]
 const TARGET_COLORS: Array[Color] = [RED, YELLOW, BLACK, YELLOW, RED]
 const CHECKPOINT_X := [205.0, 345.0, 485.0, 625.0, 765.0]
+const PATROL_HALF_WIDTH := 52.0
+const PATROL_SPEED := 45.0
+const REACTION_END_DISTANCE := 230.0
+const BADGER_CONFUSED_PAUSE := 1.0
 
 @onready var player: CharacterBody2D = $Player
 @onready var camera: Camera2D = $Player/Camera2D
@@ -27,15 +30,16 @@ var pattern_names: Array[String] = []
 var pattern_colors: Array[Color] = []
 var pigments: Array[Node2D] = []
 var enemies: Array[Node2D] = []
-var safe_zones: Array[Rect2] = [Rect2(1518, 205, 105, 48), Rect2(1690, 105, 96, 45)]
 var game_over := false
 var victory := false
 var badger_active := false
+var badger_shelter_phase := "chasing"
+var badger_confused_pause := 0.0
 var last_status := ""
 
 func _ready() -> void:
 	create_pigments()
-	create_enemies()
+	register_enemies()
 	update_pattern_hud()
 	get_tree().paused = true
 	intro.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
@@ -56,28 +60,17 @@ func create_pigments() -> void:
 	for checkpoint in range(options.size()):
 		for option_index in range(3):
 			var data: Array = options[checkpoint][option_index]
-			var pigment := Node2D.new()
-			pigment.set_script(Pigment)
+			var pigment := PigmentScene.instantiate()
 			$Pigments.add_child(pigment)
 			pigment.position = Vector2(CHECKPOINT_X[checkpoint], ys[option_index])
 			pigment.setup(data[0], data[1], checkpoint)
 			pigments.append(pigment)
 
-func create_enemies() -> void:
-	var configs := [
-		[Predator.Kind.BIRD, Vector2(1010, 135)],
-		[Predator.Kind.BIRD, Vector2(1165, 245)],
-		[Predator.Kind.OPOSSUM, Vector2(1340, 165)],
-		[Predator.Kind.BADGER, Vector2(1450, 250)],
-	]
-	for config in configs:
-		var enemy := Node2D.new()
-		enemy.set_script(Predator)
-		$Enemies.add_child(enemy)
-		enemy.position = config[1]
-		enemy.setup(config[0])
-		enemy.set_meta("origin", config[1])
-		enemy.visible = config[0] != Predator.Kind.BADGER
+func register_enemies() -> void:
+	for enemy in $Enemies.get_children():
+		enemy.set_meta("origin", enemy.position)
+		enemy.set_meta("patrol_direction", enemy.facing)
+		enemy.visible = enemy.kind != Predator.Kind.BADGER
 		enemies.append(enemy)
 
 func start_level() -> void:
@@ -162,12 +155,15 @@ func update_predators(delta: float) -> void:
 
 		var origin: Vector2 = enemy.get_meta("origin")
 		var distance := enemy.global_position.distance_to(player.global_position)
-		var detected := predator_can_see(enemy, distance)
-		if detected:
+		var detected: bool = enemy.can_see_position(player.global_position)
+		var reacting: bool = detected or (enemy.state in ["attacking", "deterred"] and distance < REACTION_END_DISTANCE)
+		if reacting:
 			if disguised:
 				enemy.alert_text = "!"
 				enemy.state = "deterred"
 				var away := (enemy.global_position - player.global_position).normalized()
+				if absf(away.x) > 0.05:
+					enemy.facing = signf(away.x)
 				enemy.global_position += away * delta * (72.0 if enemy.kind == Predator.Kind.BIRD else 28.0)
 				set_status("Blefe aceito: o predador hesitou.")
 			else:
@@ -179,23 +175,31 @@ func update_predators(delta: float) -> void:
 				set_status("Predador atacando: o padrão não convenceu.")
 		else:
 			enemy.alert_text = ""
-			var patrol_target := origin
-			if enemy.kind == Predator.Kind.OPOSSUM:
-				patrol_target += Vector2(sin(enemy.animation_time * 0.8) * 52.0, 0)
-				enemy.facing = signf(patrol_target.x - enemy.global_position.x) if absf(patrol_target.x - enemy.global_position.x) > 0.5 else enemy.facing
-			enemy.global_position = enemy.global_position.move_toward(patrol_target, delta * 45.0)
+			enemy.state = "watching"
+			patrol_enemy(enemy, origin, delta)
 
-		if distance < 19.0:
+		if not disguised and enemy.is_in_attack_range(player.global_position):
 			lose_level("O predador identificou a falsa-coral como presa.")
 
-func predator_can_see(enemy: Node2D, distance: float) -> bool:
-	if enemy.kind == Predator.Kind.OPOSSUM:
-		return distance < 125.0
-	var relative := player.global_position - enemy.global_position
-	if relative.x > 15.0 or relative.x < -195.0:
-		return false
-	var cone_half_height := lerpf(12.0, 68.0, absf(relative.x) / 195.0)
-	return absf(relative.y) <= cone_half_height
+func patrol_enemy(enemy: Node2D, origin: Vector2, delta: float) -> void:
+	var patrol_direction: float = enemy.get_meta("patrol_direction", -1.0)
+	var left_limit := origin.x - PATROL_HALF_WIDTH
+	var right_limit := origin.x + PATROL_HALF_WIDTH
+	if enemy.global_position.x <= left_limit:
+		patrol_direction = 1.0
+	elif enemy.global_position.x >= right_limit:
+		patrol_direction = -1.0
+
+	enemy.facing = patrol_direction
+	enemy.set_meta("patrol_direction", patrol_direction)
+	var next_x := enemy.global_position.x + patrol_direction * PATROL_SPEED * delta
+	if enemy.global_position.x < left_limit:
+		enemy.global_position.x = minf(next_x, left_limit)
+	elif enemy.global_position.x > right_limit:
+		enemy.global_position.x = maxf(next_x, right_limit)
+	else:
+		enemy.global_position.x = clampf(next_x, left_limit, right_limit)
+	enemy.global_position.y = move_toward(enemy.global_position.y, origin.y, PATROL_SPEED * delta)
 
 func update_badger(badger: Node2D, delta: float) -> void:
 	if not badger_active and player.global_position.x >= 1460.0:
@@ -206,22 +210,43 @@ func update_badger(badger: Node2D, delta: float) -> void:
 	if not badger_active:
 		return
 
-	var player_hidden := false
-	for zone in safe_zones:
-		if zone.has_point(player.global_position):
-			player_hidden = true
-			break
+	var player_hidden: bool = player.is_inside_shelter()
 
-	badger.alert_text = "X"
 	if not player_hidden:
+		badger_shelter_phase = "chasing"
+		badger_confused_pause = 0.0
+		badger.alert_text = "X"
+		badger.state = "attacking"
 		var direction := (player.global_position - badger.global_position).normalized()
 		badger.facing = signf(direction.x) if absf(direction.x) > 0.05 else badger.facing
 		badger.global_position += direction * delta * 102.0
 	else:
-		set_status("Abrigo estreito: o texugo não consegue entrar.")
+		update_sheltered_badger(badger, delta)
 
-	if badger.global_position.distance_to(player.global_position) < 23.0 and not player_hidden:
+	if badger.is_in_attack_range(player.global_position) and not player_hidden:
 		lose_level("O texugo-do-mel não teme as cores da coral.")
+
+func update_sheltered_badger(badger: Node2D, delta: float) -> void:
+	if badger_shelter_phase == "chasing":
+		badger_shelter_phase = "confused"
+		badger_confused_pause = 0.0
+		badger.alert_text = "X"
+		badger.state = "confused"
+		set_status("Abrigo estreito: o texugo não consegue entrar.")
+		return
+
+	if badger_shelter_phase == "confused":
+		badger.state = "confused"
+		if badger.is_animation_finished(&"confused"):
+			badger_confused_pause += delta
+			if badger_confused_pause >= BADGER_CONFUSED_PAUSE:
+				badger_shelter_phase = "patrolling"
+		return
+
+	badger.alert_text = ""
+	badger.state = "watching"
+	var origin: Vector2 = badger.get_meta("origin")
+	patrol_enemy(badger, origin, delta)
 
 func is_pattern_correct() -> bool:
 	return pattern_names == TARGET_NAMES

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://Animações/Fase3/Sprites/AssetsFase/cenario_trilha.png" id="1_background"]
+[ext_resource type="Texture2D" path="res://Animações/Fase3/Sprites/AssetsFase/tronco_abrigo.png" id="2_shelter"]
+
+[node name="Cenario" type="Node2D"]
+
+[node name="CenarioTrilha" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.2, 1.1985)
+texture = ExtResource("1_background")
+centered = false
+
+[node name="Abrigo1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1570, 229)
+texture = ExtResource("2_shelter")
+
+[node name="Abrigo2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1738, 127)
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("2_shelter")

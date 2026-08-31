@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://bj8p8nqq276kx"]
+
+[ext_resource type="Script" uid="uid://byd5es6cwgjto" path="res://Scripts/predador_fase_3.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bpyl487b4mqcj" path="res://Animações/Fase3/Sprites/Texugo/Walking.png" id="2_walking"]
+[ext_resource type="Texture2D" uid="uid://bufiu7rby2tew" path="res://Animações/Fase3/Sprites/Texugo/Confused.png" id="3_confused"]
+[ext_resource type="Texture2D" uid="uid://i0p4153g2wsj" path="res://Animações/Fase3/Sprites/Icones/cone_visao.png" id="4_cone"]
+[ext_resource type="Shader" uid="uid://bniyeob2y7t7v" path="res://Cenas/Fase3/remover_fundo_branco.gdshader" id="5_shader"]
+
+[sub_resource type="RectangleShape2D" id="BodyShape_badger"]
+size = Vector2(66, 34)
+
+[sub_resource type="ShaderMaterial" id="Material_remove_white"]
+shader = ExtResource("5_shader")
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_0"]
+atlas = ExtResource("3_confused")
+region = Rect2(710, 513, 70, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_1"]
+atlas = ExtResource("3_confused")
+region = Rect2(781, 513, 70, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_2"]
+atlas = ExtResource("3_confused")
+region = Rect2(853, 513, 70, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_3"]
+atlas = ExtResource("3_confused")
+region = Rect2(925, 513, 64, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_4"]
+atlas = ExtResource("3_confused")
+region = Rect2(996, 513, 64, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_5"]
+atlas = ExtResource("3_confused")
+region = Rect2(1068, 513, 63, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_confused_6"]
+atlas = ExtResource("3_confused")
+region = Rect2(1139, 513, 63, 54)
+
+[sub_resource type="AtlasTexture" id="Atlas_walking_0"]
+atlas = ExtResource("2_walking")
+region = Rect2(806, 521, 61, 37)
+
+[sub_resource type="AtlasTexture" id="Atlas_walking_1"]
+atlas = ExtResource("2_walking")
+region = Rect2(868, 521, 61, 37)
+
+[sub_resource type="AtlasTexture" id="Atlas_walking_2"]
+atlas = ExtResource("2_walking")
+region = Rect2(929, 521, 61, 37)
+
+[sub_resource type="AtlasTexture" id="Atlas_walking_3"]
+atlas = ExtResource("2_walking")
+region = Rect2(990, 521, 61, 37)
+
+[sub_resource type="AtlasTexture" id="Atlas_walking_4"]
+atlas = ExtResource("2_walking")
+region = Rect2(1051, 521, 62, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_badger"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_confused_6")
+}],
+"loop": 0,
+"name": &"confused",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_walking_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_walking_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_walking_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_walking_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_walking_4")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 4.5
+}]
+
+[sub_resource type="CircleShape2D" id="VisionShape_badger"]
+radius = 125.0
+
+[sub_resource type="CircleShape2D" id="AttackShape_badger"]
+radius = 23.0
+
+[node name="Texugo" type="CharacterBody2D" unique_id=549307621]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_script")
+kind = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1158123138]
+shape = SubResource("BodyShape_badger")
+
+[node name="VisionCone" type="Sprite2D" parent="." unique_id=704194780]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(-98, 3)
+texture = ExtResource("4_cone")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1910582308]
+texture_filter = 1
+material = SubResource("Material_remove_white")
+position = Vector2(-0.9499997, 4.2000017)
+scale = Vector2(1.17, 1.0444444)
+sprite_frames = SubResource("SpriteFrames_badger")
+animation = &"confused"
+autoplay = "walking"
+
+[node name="VisionArea" type="Area2D" parent="." unique_id=262212978]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" unique_id=1116533139]
+shape = SubResource("VisionShape_badger")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=2104500748]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=434792112]
+shape = SubResource("AttackShape_badger")
+
+[node name="AlertIcon" type="Sprite2D" parent="." unique_id=915668236]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(0, -31)

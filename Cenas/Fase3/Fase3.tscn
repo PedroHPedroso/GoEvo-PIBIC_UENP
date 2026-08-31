@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://bvxmxo61qc47d"]
 
 [ext_resource type="Script" uid="uid://g410yva7p7fa" path="res://Scripts/fase_3.gd" id="1_main"]
-[ext_resource type="Script" uid="uid://qpjuc5tynpas" path="res://Scripts/fase_3_cenario.gd" id="2_world"]
-[ext_resource type="Script" uid="uid://brkwe0a5hk2av" path="res://Scripts/player_cobra.gd" id="3_player"]
+[ext_resource type="PackedScene" path="res://Cenas/Fase3/cenario.tscn" id="2_world"]
+[ext_resource type="PackedScene" path="res://Cenas/Fase3/player_cobra.tscn" id="3_player"]
 [ext_resource type="FontFile" uid="uid://vbwj8al8o7qa" path="res://Fonts/determination.ttf" id="4_font"]
-
-[sub_resource type="CapsuleShape2D" id="Capsule_player"]
-radius = 8.0
-height = 28.0
+[ext_resource type="PackedScene" path="res://Cenas/Fase3/falcao.tscn" id="5_falcon"]
+[ext_resource type="PackedScene" path="res://Cenas/Fase3/gamba.tscn" id="6_opossum"]
+[ext_resource type="PackedScene" path="res://Cenas/Fase3/texugo.tscn" id="7_badger"]
 
 [sub_resource type="StyleBoxFlat" id="Style_top"]
 bg_color = Color(0.055, 0.083, 0.063, 0.94)
@@ -40,30 +39,27 @@ corner_radius_bottom_left = 4
 [node name="Fase3" type="Node2D" unique_id=1010681264]
 script = ExtResource("1_main")
 
-[node name="World" type="Node2D" parent="." unique_id=578158588]
-script = ExtResource("2_world")
+[node name="World" parent="." unique_id=578158588 instance=ExtResource("2_world")]
 
 [node name="Pigments" type="Node2D" parent="." unique_id=968352067]
 
 [node name="Enemies" type="Node2D" parent="." unique_id=724259054]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=734956454]
+[node name="Falcao1" parent="Enemies" unique_id=947242354 instance=ExtResource("5_falcon")]
+position = Vector2(1010, 135)
+
+[node name="Falcao2" parent="Enemies" unique_id=668207159 instance=ExtResource("5_falcon")]
+position = Vector2(1165, 245)
+
+[node name="Gamba" parent="Enemies" unique_id=1081111677 instance=ExtResource("6_opossum")]
+position = Vector2(1340, 165)
+
+[node name="Texugo" parent="Enemies" unique_id=1206328838 instance=ExtResource("7_badger")]
+visible = false
+position = Vector2(1450, 250)
+
+[node name="Player" parent="." unique_id=734956454 instance=ExtResource("3_player")]
 position = Vector2(58, 188)
-collision_mask = 0
-script = ExtResource("3_player")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=367457104]
-rotation = 1.5708
-shape = SubResource("Capsule_player")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=752182684]
-position = Vector2(230, -28)
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 320
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1340987282]
 

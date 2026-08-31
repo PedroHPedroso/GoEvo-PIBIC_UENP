@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://Scripts/predador_fase_3.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://Animações/Fase3/Sprites/Gamba/Walking.png" id="2_opossum"]
+[ext_resource type="Texture2D" path="res://Animações/Fase3/Sprites/Icones/cone_visao.png" id="3_cone"]
+[ext_resource type="Shader" path="res://Cenas/Fase3/remover_fundo_branco.gdshader" id="4_shader"]
+
+[sub_resource type="ShaderMaterial" id="Material_remove_white"]
+shader = ExtResource("4_shader")
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_0"]
+atlas = ExtResource("2_opossum")
+region = Rect2(710, 520, 93, 40)
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_1"]
+atlas = ExtResource("2_opossum")
+region = Rect2(804, 520, 63, 40)
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_2"]
+atlas = ExtResource("2_opossum")
+region = Rect2(867, 520, 92, 40)
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_3"]
+atlas = ExtResource("2_opossum")
+region = Rect2(960, 520, 92, 40)
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_4"]
+atlas = ExtResource("2_opossum")
+region = Rect2(1054, 520, 62, 40)
+
+[sub_resource type="AtlasTexture" id="Atlas_opossum_5"]
+atlas = ExtResource("2_opossum")
+region = Rect2(1116, 520, 93, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opossum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_opossum_5")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="BodyShape_opossum"]
+size = Vector2(58, 28)
+
+[sub_resource type="CircleShape2D" id="VisionShape_opossum"]
+radius = 125.0
+
+[sub_resource type="CircleShape2D" id="AttackShape_opossum"]
+radius = 19.0
+
+[node name="Gamba" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_script")
+kind = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("BodyShape_opossum")
+
+[node name="VisionCone" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+z_index = -1
+position = Vector2(-98, 3)
+texture = ExtResource("3_cone")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("Material_remove_white")
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_opossum")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource("VisionShape_opossum")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("AttackShape_opossum")
+
+[node name="AlertIcon" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+z_index = 2
+position = Vector2(0, -31)
