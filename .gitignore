@@ -1,6 +1,7 @@
 *.png.import
 .import/
 *.md
+!README.md
 *Cenas/Fase3/*.gdshader
 *Cenas/Fase3/*.gdshader.uid
 *.uid
