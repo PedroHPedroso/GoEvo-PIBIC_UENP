@@ -68,48 +68,83 @@ offset_right = 640.0
 offset_bottom = 56.0
 theme_override_styles/panel = SubResource("Style_top")
 
-[node name="PhaseTitle" type="Label" parent="HUD/TopBar" unique_id=862229479]
+[node name="Margin" type="MarginContainer" parent="HUD/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="HUD/TopBar/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TitleBlock" type="VBoxContainer" parent="HUD/TopBar/Margin/HBox"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PhaseTitle" type="Label" parent="HUD/TopBar/Margin/HBox/TitleBlock" unique_id=862229479]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.94, 0.83, 0.49, 1)
 theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 13
 text = "O BLEFE PERFEITO"
 
-[node name="SectionLabel" type="Label" parent="HUD/TopBar" unique_id=77801317]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.76, 0.81, 0.69, 1)
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 11
-text = "PIGMENTOS 0/5"
-
-[node name="PatternCaption" type="Label" parent="HUD/TopBar" unique_id=1678485522]
+[node name="SectionLabel" type="Label" parent="HUD/TopBar/Margin/HBox/TitleBlock" unique_id=77801317]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.76, 0.81, 0.69, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 10
+text = "PIGMENTOS 0/5"
+text_overrun_behavior = 3
+
+[node name="PatternBlock" type="VBoxContainer" parent="HUD/TopBar/Margin/HBox"]
+custom_minimum_size = Vector2(196, 0)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="PatternCaption" type="Label" parent="HUD/TopBar/Margin/HBox/PatternBlock" unique_id=1678485522]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.81, 0.69, 1)
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 9
 text = "PADRÃO DA CORAL"
 
-[node name="PatternRow" type="HBoxContainer" parent="HUD/TopBar" unique_id=367775950]
+[node name="PatternLine" type="HBoxContainer" parent="HUD/TopBar/Margin/HBox/PatternBlock"]
 layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="PatternRow" type="HBoxContainer" parent="HUD/TopBar/Margin/HBox/PatternBlock/PatternLine" unique_id=367775950]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 3
 
-[node name="UndoButton" type="Button" parent="HUD/TopBar" unique_id=242501824]
+[node name="UndoButton" type="Button" parent="HUD/TopBar/Margin/HBox/PatternBlock/PatternLine" unique_id=242501824]
+custom_minimum_size = Vector2(24, 18)
 layout_mode = 2
 tooltip_text = "Desfazer último pigmento"
 theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "<"
 
-[node name="Progress" type="ProgressBar" parent="HUD/TopBar" unique_id=1209456006]
+[node name="ProgressBlock" type="VBoxContainer" parent="HUD/TopBar/Margin/HBox"]
 layout_mode = 2
-show_percentage = false
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
 
-[node name="ProgressCaption" type="Label" parent="HUD/TopBar" unique_id=1935252260]
+[node name="ProgressCaption" type="Label" parent="HUD/TopBar/Margin/HBox/ProgressBlock" unique_id=1935252260]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.76, 0.81, 0.69, 1)
 theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "TRILHA ATÉ A CLAREIRA"
+horizontal_alignment = 1
+
+[node name="Progress" type="ProgressBar" parent="HUD/TopBar/Margin/HBox/ProgressBlock" unique_id=1209456006]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+show_percentage = false
 
 [node name="StatusLabel" type="Label" parent="HUD" unique_id=175679006]
 offset_left = 72.0
@@ -221,8 +256,9 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_colors/font_color = Color(0.94, 0.81, 0.39, 1)
 theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Body" type="Label" parent="HUD/EndPanel/Panel/VBox" unique_id=1057179425]
 layout_mode = 2

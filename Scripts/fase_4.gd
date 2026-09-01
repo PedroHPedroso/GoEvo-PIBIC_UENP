@@ -270,8 +270,8 @@ func continue_from_summary() -> void:
 	show_final_synthesis()
 
 func show_final_synthesis() -> void:
-	summary_title.text = "Irradiação Adaptativa"
-	summary_body.text = "Uma espécie ancestral colonizou o arquipélago. Em cada ilha, alimentos diferentes favoreceram bicos diferentes. Ao longo das gerações, essas pressões seletivas originaram linhagens especializadas e novas espécies."
+	summary_title.text = "Parabéns, você concluiu a Fase 4!"
+	summary_body.text = "IRRADIAÇÃO ADAPTATIVA\n\nUma espécie ancestral colonizou o arquipélago. Em cada ilha, alimentos diferentes favoreceram bicos diferentes. Ao longo das gerações, essas pressões seletivas originaram linhagens especializadas e novas espécies."
 	summary_button.text = "Recomeçar jornada"
 	for connection in summary_button.pressed.get_connections():
 		summary_button.pressed.disconnect(connection.callable)

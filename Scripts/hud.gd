@@ -1,9 +1,9 @@
 extends CanvasLayer
 
 @export var player: CharacterBody2D
-@onready var moscas_label: Label = ($MarginContainer/HBoxContainer/MoscaLabel)
-@onready var mensagem_fase: PanelContainer = $MsgFase
-@onready var mensagem_fase_label: Label = ($MsgFase/Label)
+@onready var moscas_label: Label = $CounterPanel/HBox/TextBlock/MoscaLabel
+@onready var mensagem_fase: Control = $MsgFase
+@onready var mensagem_fase_label: Label = $MsgFase/Panel/VBox/Label
 
 
 func _ready() -> void:
@@ -24,7 +24,7 @@ func _on_moscas_atualizadas(total: int) -> void:
 	atualizar_contador(total)
 
 func atualizar_contador(total: int) -> void:
-	moscas_label.text = "Moscas: %d/10" % total
+	moscas_label.text = "MOSCAS  %d/10" % total
 
 # MENSAGEM DE FASE CONCLUÍDA
 func mostrar_fase_concluida() -> void:

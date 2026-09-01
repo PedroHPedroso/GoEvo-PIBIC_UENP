@@ -4,8 +4,9 @@ signal fase_concluida
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label_interacao: Label = $LabelInteracao
-@onready var caixa_de_dialogo: Label = $CanvasLayer/CaixaDeDialogo
-@onready var texto_dialogo: Label = $CanvasLayer/TextoDialogo
+@onready var caixa_de_dialogo: PanelContainer = $CanvasLayer/CaixaDeDialogo
+@onready var texto_dialogo: Label = $CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/TextoDialogo
+@onready var advance_hint: Label = $CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/Header/AdvanceHint
 
 var player_in_area = false
 var player_atual = null
@@ -26,7 +27,7 @@ func _ready() -> void:
 	anim.flip_h = true
 	anim.play("Idle")
 	caixa_de_dialogo.visible = false
-	texto_dialogo.visible = false
+	advance_hint.visible = false
 	label_interacao.visible = false
 	
 func _process(_delta) -> void:
@@ -39,7 +40,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name ==  "Player":
 		player_in_area = true
 		player_atual = body
-		label_interacao.text = "Pressione 'E' para interagir"
+		label_interacao.text = "E  CONVERSAR"
 		label_interacao.visible = true
 
 func _on_body_exited(body) -> void:
@@ -60,7 +61,6 @@ func iniciar_dialogo():
 	versao_dialogo += 1
 	label_interacao.visible = false
 	caixa_de_dialogo.visible = true
-	texto_dialogo.visible = true
 	fala_index = 0
 	proxima_fala()
 	
@@ -90,6 +90,7 @@ func selecionar_dialogo() -> void:
 func proxima_fala():
 	if fala_index < falas.size():
 		pode_avancar = false
+		advance_hint.visible = false
 		texto_dialogo.text = ""
 		var texto = falas[fala_index]
 		atualizar_animacao_da_fala(fala_index)
@@ -120,14 +121,15 @@ func mostrar_texto_com_efeito(texto: String, versao_atual: int):
 		if versao_atual != versao_dialogo or not falando:
 			return
 	pode_avancar = true
+	advance_hint.visible = true
 	
 func encerrar_dialogo(dialogo_finalizado: bool = false) -> void:
 	falando = false
 	pode_avancar = false
 	versao_dialogo += 1
 	
-	texto_dialogo.visible = false
 	caixa_de_dialogo.visible = false
+	advance_hint.visible = false
 	
 	if(dialogo_finalizado and deve_concluir_fase and not fase_ja_concluida):
 		fase_ja_concluida = true

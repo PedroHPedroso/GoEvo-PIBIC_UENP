@@ -16,10 +16,10 @@ const BADGER_CONFUSED_PAUSE := 1.0
 
 @onready var player: CharacterBody2D = $Player
 @onready var camera: Camera2D = $Player/Camera2D
-@onready var pattern_row: HBoxContainer = $HUD/TopBar/PatternRow
+@onready var pattern_row: HBoxContainer = $HUD/TopBar/Margin/HBox/PatternBlock/PatternLine/PatternRow
 @onready var status_label: Label = $HUD/StatusLabel
-@onready var section_label: Label = $HUD/TopBar/SectionLabel
-@onready var progress: ProgressBar = $HUD/TopBar/Progress
+@onready var section_label: Label = $HUD/TopBar/Margin/HBox/TitleBlock/SectionLabel
+@onready var progress: ProgressBar = $HUD/TopBar/Margin/HBox/ProgressBlock/Progress
 @onready var intro: Control = $HUD/Intro
 @onready var end_panel: Control = $HUD/EndPanel
 @onready var end_title: Label = $HUD/EndPanel/Panel/VBox/Title
@@ -44,7 +44,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	intro.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	end_panel.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-	$HUD/TopBar/UndoButton.pressed.connect(undo_last_pigment)
+	$HUD/TopBar/Margin/HBox/PatternBlock/PatternLine/UndoButton.pressed.connect(undo_last_pigment)
 	$HUD/Intro/Panel/VBox/StartButton.pressed.connect(start_level)
 	end_button.pressed.connect(end_action)
 
@@ -273,9 +273,9 @@ func win_level() -> void:
 		return
 	victory = true
 	player.pode_mover = false
-	end_title.text = "Blefe perfeito"
-	end_body.text = "A falsa-coral sobreviveu ao imitar o padrão de alerta da coral verdadeira e escapou do predador imune."
-	end_button.text = "Continuar"
+	end_title.text = "Parabéns, você concluiu a Fase 3!"
+	end_body.text = "Blefe perfeito! A falsa-coral sobreviveu ao imitar o padrão de alerta da coral verdadeira e escapou do predador imune."
+	end_button.text = "Continuar para a Fase 4"
 	end_panel.visible = true
 	get_tree().paused = true
 

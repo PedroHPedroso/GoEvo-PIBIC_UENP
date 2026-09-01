@@ -119,12 +119,53 @@ animations = [{
 size = Vector2(74.698, 35.177002)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gim56"]
-bg_color = Color(0, 0, 0, 0.77254903)
+bg_color = Color(0.02, 0.105, 0.09, 0.97)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.48, 0.7, 0.32, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.58)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="Style_Portrait"]
+bg_color = Color(0.055, 0.18, 0.13, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.84, 0.48, 0.58, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="Style_Prompt"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.025, 0.12, 0.1, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.62, 0.75, 0.34, 0.9)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_qi68m"]
 font = ExtResource("2_alhhx")
 font_size = 9
+font_color = Color(0.94, 0.86, 0.52, 1)
 shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
 
 [node name="Sapinha" type="Area2D" unique_id=2112393429]
 script = ExtResource("1_alhhx")
@@ -143,33 +184,83 @@ position = Vector2(3.349001, -8.5885)
 shape = SubResource("RectangleShape2D_3v0ji")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747718928]
+layer = 5
 
-[node name="CaixaDeDialogo" type="Label" parent="CanvasLayer" unique_id=1066539992]
-offset_top = 195.0
-offset_right = 640.0
-offset_bottom = 320.0
+[node name="CaixaDeDialogo" type="PanelContainer" parent="CanvasLayer" unique_id=1066539992]
+visible = false
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 624.0
+offset_bottom = 310.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gim56")
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/CaixaDeDialogo"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 9
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/CaixaDeDialogo/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="PortraitFrame" type="PanelContainer" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox"]
+custom_minimum_size = Vector2(91, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_Portrait")
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox/PortraitFrame"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0jbkk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBlock" type="VBoxContainer" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Header" type="HBoxContainer" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock"]
+layout_mode = 2
+
+[node name="Speaker" type="Label" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.91, 0.58, 0.66, 1)
 theme_override_fonts/font = ExtResource("2_alhhx")
-theme_override_styles/normal = SubResource("StyleBoxFlat_gim56")
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "SAPA DO PÂNTANO"
 
-[node name="TextoDialogo" type="Label" parent="CanvasLayer" unique_id=1248270273]
-offset_left = 10.0
-offset_top = 200.0
-offset_right = 630.0
-offset_bottom = 315.0
-theme_override_font_sizes/font_size = 20
+[node name="AdvanceHint" type="Label" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/Header"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.38, 1)
+theme_override_fonts/font = ExtResource("2_alhhx")
+theme_override_font_sizes/font_size = 9
+text = "E  AVANÇAR  >"
+
+[node name="TextoDialogo" type="Label" parent="CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock" unique_id=1248270273]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.91, 0.94, 0.82, 1)
+theme_override_fonts/font = ExtResource("2_alhhx")
+theme_override_font_sizes/font_size = 15
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=922465009]
 
 [node name="LabelInteracao" type="Label" parent="." unique_id=611800351]
-offset_left = -29.0
-offset_top = -41.0
-offset_right = 36.0
-offset_bottom = -26.0
-text = "Pressione E"
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = -27.0
+theme_override_styles/normal = SubResource("Style_Prompt")
+text = "E  CONVERSAR"
 label_settings = SubResource("LabelSettings_qi68m")
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
