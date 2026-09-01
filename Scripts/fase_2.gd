@@ -1,57 +1,99 @@
 extends Node2D
 
-@onready var player: CharacterBody2D = $PlayerMariposa
-@onready var predador: CharacterBody2D = $Predador
-@onready var selecao_painel: Control = $HUD/SelecaoCorPanel
-@onready var troncos_container: Node2D = $Troncos
+const STAGE_NAMES := [
+	"CAMPO PRÉ-INDUSTRIAL",
+	"BÉTULAS CLARAS",
+	"TRANSIÇÃO INDUSTRIAL",
+	"MANCHESTER INDUSTRIAL",
+]
+const STAGE_INSTRUCTIONS := [
+	"Os troncos ainda são claros e cobertos por líquens.",
+	"A casca branca domina este ambiente rural.",
+	"Troncos divididos: pouse na metade da mesma cor da mariposa.",
+	"A fuligem escureceu completamente os troncos.",
+]
+const PLAYER_SPAWN := Vector2(320, 88)
 
-var etapa_atual: int = 1
+@onready var player: CharacterBody2D = $PlayerMariposa
+@onready var predator: CharacterBody2D = $Predador
+@onready var scenarios: Node2D = $Cenarios
+@onready var trunk_stages: Node2D = $Troncos
+@onready var selection_panel: Control = $HUD/SelecaoCorPanel
+@onready var selection_title: Label = $HUD/SelecaoCorPanel/Panel/VBox/Titulo
+@onready var selection_instruction: Label = $HUD/SelecaoCorPanel/Panel/VBox/Instrucao
+@onready var stage_label: Label = $HUD/TopBar/Margin/HBox/StageLabel
+@onready var status_label: Label = $HUD/StatusLabel
+@onready var completion_panel: Control = $HUD/MsgFase
+
+var current_stage := 1
+var finishing_phase := false
 
 func _ready() -> void:
-	player.predador_alerta.connect(predador.iniciar_ataque)
-	configurar_etapa(1)
+	completion_panel.visible = false
+	completion_panel.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	player.predador_alerta.connect(_on_predator_alert)
+	configure_stage(1)
 
-func configurar_etapa(etapa: int) -> void:
-	etapa_atual = etapa
+func configure_stage(stage: int) -> void:
+	current_stage = clampi(stage, 1, 4)
+	predator.resetar()
 	player.pode_mover = false
 	player.velocity = Vector2.ZERO
 	player.agarrado = false
+	player.zona_atual = null
+	player.zonas_proximas.clear()
 	player.cor_atual = player.CorMariposa.NENHUMA
 	player.timer_camuflagem.stop()
-	player.global_position = Vector2(100, 300)
-	selecao_painel.visible = true
-	
-	var arvores = troncos_container.get_children()
+	player.global_position = PLAYER_SPAWN
+	player.anim.modulate = Color.WHITE
 
-	match etapa_atual:
-		1: # Etapa 1: Misto de árvores Marrons e Brancas
-			for i in range(arvores.size()):
-				var cor = player.CorMariposa.MARROM if i % 2 == 0 else player.CorMariposa.BRANCA
-				arvores[i].definir_tonalidade(cor)
-		2: # Etapa 2: Apenas árvores Brancas (Manchester pré-industrial)
-			for arvore in arvores:
-				arvore.definir_tonalidade(player.CorMariposa.BRANCA)
-		3: # Etapa 3: Apenas árvores Pretas (Manchester industrial/fuligem)
-			for arvore in arvores:
-				arvore.definir_tonalidade(player.CorMariposa.PRETA)
+	for index in range(scenarios.get_child_count()):
+		scenarios.get_child(index).visible = index == current_stage - 1
 
-# Sinais dos Botões do HUD
-func _on_btn_marrom_pressed() -> void:
-	iniciar_jogo_com_cor(player.CorMariposa.MARROM)
+	for index in range(trunk_stages.get_child_count()):
+		var stage_group := trunk_stages.get_child(index) as Node2D
+		var enabled := index == current_stage - 1
+		stage_group.visible = enabled
+		for trunk in stage_group.get_children():
+			trunk.set_stage_enabled(enabled)
+
+	stage_label.text = "ETAPA %d/4  •  %s" % [current_stage, STAGE_NAMES[current_stage - 1]]
+	selection_title.text = "Escolha sua mariposa  •  Etapa %d/4" % current_stage
+	selection_instruction.text = STAGE_INSTRUCTIONS[current_stage - 1]
+	status_label.text = ""
+	selection_panel.visible = true
 
 func _on_btn_branca_pressed() -> void:
-	iniciar_jogo_com_cor(player.CorMariposa.BRANCA)
+	start_with_color(player.CorMariposa.BRANCA)
 
 func _on_btn_preta_pressed() -> void:
-	iniciar_jogo_com_cor(player.CorMariposa.PRETA)
+	start_with_color(player.CorMariposa.PRETA)
 
-func iniciar_jogo_com_cor(cor) -> void:
-	selecao_painel.visible = false
-	player.definir_cor(cor)
+func start_with_color(color: int) -> void:
+	selection_panel.visible = false
+	status_label.text = "Encontre um tronco e segure E ou Espaço para testar a camuflagem."
+	player.definir_cor(color)
+
+func _on_predator_alert(player_position: Vector2) -> void:
+	status_label.text = "Camuflagem incorreta: o predador detectou a mariposa!"
+	predator.iniciar_ataque(player_position)
 
 func _on_player_mariposa_camuflagem_concluida() -> void:
-	if etapa_atual < 3:
-		configurar_etapa(etapa_atual + 1)
+	status_label.text = "Camuflagem correta!"
+	if current_stage < 4:
+		configure_stage(current_stage + 1)
 	else:
-		# Finaliza a fase e carrega a Fase 3
-		get_tree().change_scene_to_file("res://Cenas/Fase3/Fase3.tscn")
+		complete_phase()
+
+func complete_phase() -> void:
+	if finishing_phase:
+		return
+	finishing_phase = true
+	player.pode_mover = false
+	player.velocity = Vector2.ZERO
+	selection_panel.visible = false
+	completion_panel.visible = true
+	get_tree().paused = true
+	await get_tree().create_timer(3.0).timeout
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Cenas/Fase3/Fase3.tscn")

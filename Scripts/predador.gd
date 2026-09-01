@@ -8,6 +8,7 @@ var estado_atual: Estado = Estado.INATIVO
 
 var ponto_inicial: Vector2
 var alvo_posicao: Vector2
+var attack_version := 0
 
 func _ready() -> void:
 	ponto_inicial = global_position
@@ -15,6 +16,8 @@ func _ready() -> void:
 
 func iniciar_ataque(posicao_player: Vector2) -> void:
 	if estado_atual == Estado.INATIVO:
+		attack_version += 1
+		var current_version := attack_version
 		alvo_posicao = posicao_player
 		global_position = Vector2(posicao_player.x + randf_range(-150, 150), ponto_inicial.y)
 		visible = true
@@ -22,7 +25,15 @@ func iniciar_ataque(posicao_player: Vector2) -> void:
 		
 		# Pequeno delay antes do rasante
 		await get_tree().create_timer(0.5).timeout
-		estado_atual = Estado.MERGULHANDO
+		if current_version == attack_version and estado_atual == Estado.PREPARANDO_MERGULHO:
+			estado_atual = Estado.MERGULHANDO
+
+func resetar() -> void:
+	attack_version += 1
+	estado_atual = Estado.INATIVO
+	velocity = Vector2.ZERO
+	global_position = ponto_inicial
+	visible = false
 
 func _physics_process(delta: float) -> void:
 	match estado_atual:

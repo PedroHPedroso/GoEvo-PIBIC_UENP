@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/tronco_fase_2.gd" id="1_trunk"]
+[ext_resource type="Texture2D" path="res://Animações/Fase2/Cenario/Troncos/tronco_cenario_1.png" id="2_texture"]
+[ext_resource type="Script" path="res://Scripts/zona_camuflagem.gd" id="3_zone"]
+
+[sub_resource type="RectangleShape2D" id="Shape_light"]
+size = Vector2(94, 220)
+
+[node name="TroncoCenario1" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("2_texture")
+script = ExtResource("1_trunk")
+
+[node name="ZonaClara" type="Area2D" parent="." groups=["zonas_camuflagem"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_zone")
+cor_superficie = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaClara"]
+position = Vector2(0, 5)
+shape = SubResource("Shape_light")
+debug_color = Color(0.9, 0.92, 0.78, 0.35)

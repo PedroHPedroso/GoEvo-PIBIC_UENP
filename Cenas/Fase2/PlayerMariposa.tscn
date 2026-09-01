@@ -30,18 +30,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_446xv")
 }],
 "loop": 1,
-"name": &"Branca",
+"name": &"Voar",
 "speed": 3.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"Marrom",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"Preta",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n4y2n"]
@@ -58,8 +48,8 @@ shape = SubResource("CircleShape2D_ekng0")
 position = Vector2(1, 2)
 scale = Vector2(0.22115384, 0.25)
 sprite_frames = SubResource("SpriteFrames_eanje")
-animation = &"Branca"
-autoplay = "Branca"
+animation = &"Voar"
+autoplay = "Voar"
 frame_progress = 0.9538291
 speed_scale = 2.0
 
