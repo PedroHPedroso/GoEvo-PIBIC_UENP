@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/plataforma_fase_4.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="Rectangle_platform"]
+resource_local_to_scene = true
+size = Vector2(1, 1)
+
+[node name="Plataforma" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Rectangle_platform")

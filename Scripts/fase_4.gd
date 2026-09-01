@@ -1,6 +1,8 @@
 extends Node2D
 
 const Food = preload("res://Scripts/recurso_fase_4.gd")
+const FoodScene := preload("res://Cenas/Fase4/recurso.tscn")
+const PlatformScene := preload("res://Cenas/Fase4/plataforma.tscn")
 
 const ISLAND_NAMES := ["Ilha das Sementes Duras", "Ilha dos Cactos", "Ilha dos Troncos Antigos"]
 const ISLAND_SUBTITLES := ["Geospiza fortis", "Geospiza scandens", "Camarhynchus pallidus"]
@@ -15,6 +17,7 @@ const BEAK_DESCRIPTIONS := [
 	["Fino e flexível", "Curvo e arredondado", "Reto, rígido e pontiagudo"],
 ]
 const CORRECT_BEAK := [0, 1, 2]
+const SPAWN_POSITIONS := [Vector2(38, 244), Vector2(38, 260), Vector2(158, 264)]
 const SUMMARIES := [
 	"Sementes duras favorecem bicos robustos e profundos. A força do alicate rompe a casca e transforma o alimento em energia.",
 	"Flores tubulares funcionam como filtros ecológicos. Bicos longos e finos alcançam o néctar sem tocar nos espinhos.",
@@ -24,11 +27,14 @@ const SUMMARIES := [
 @onready var world = $World
 @onready var player: CharacterBody2D = $Player
 @onready var platforms: Node2D = $Platforms
+@onready var stage_three_platforms: Node2D = $PlataformasEtapa3
 @onready var foods: Node2D = $Foods
-@onready var energy_bar: ProgressBar = $HUD/TopBar/Energy
-@onready var time_label: Label = $HUD/TopBar/TimeLabel
-@onready var island_label: Label = $HUD/TopBar/IslandLabel
-@onready var beak_label: Label = $HUD/TopBar/BeakLabel
+@onready var cactus_flowers: Node2D = $FloresCacto
+@onready var larvae: Node2D = $Larvas
+@onready var energy_bar: ProgressBar = $HUD/TopBar/Margin/HBox/EnergyBlock/Energy
+@onready var time_label: Label = $HUD/TopBar/Margin/HBox/TimeBlock/TimeLabel
+@onready var island_label: Label = $HUD/TopBar/Margin/HBox/IdentityBlock/IslandLabel
+@onready var beak_label: Label = $HUD/TopBar/Margin/HBox/IdentityBlock/BeakLabel
 @onready var interaction_label: Label = $HUD/InteractionLabel
 @onready var feedback_label: Label = $HUD/FeedbackLabel
 @onready var selection: Control = $HUD/Selection
@@ -49,6 +55,9 @@ var failed := false
 var feedback_tween: Tween
 
 func _ready() -> void:
+	larvae.visible = false
+	set_cactus_flowers_enabled(false)
+	set_stage_three_platforms_enabled(false)
 	selection.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	summary.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	summary_button.pressed.connect(continue_from_summary)
@@ -96,9 +105,14 @@ func setup_island() -> void:
 	world.set_island(island)
 	clear_children(platforms)
 	clear_children(foods)
+	set_cactus_flowers_enabled(island == 1)
+	set_stage_three_platforms_enabled(island == 2)
+	larvae.visible = island == 2
+	for larva in larvae.get_children():
+		larva.set_stage_enabled(island == 2)
 	create_island_layout()
 	player.configure(island, selected_beak)
-	player.reset_at(Vector2(44, 220))
+	player.reset_at(SPAWN_POSITIONS[island])
 	island_label.text = "%d/3  %s" % [island + 1, ISLAND_NAMES[island]]
 	beak_label.text = "BICO: %s" % BEAK_OPTIONS[island][selected_beak].to_upper()
 	feedback_label.text = ""
@@ -109,40 +123,39 @@ func clear_children(node: Node) -> void:
 		child.queue_free()
 
 func create_island_layout() -> void:
-	create_platform(Rect2(0, 248, 640, 72))
 	match island:
 		0:
-			create_platform(Rect2(155, 210, 90, 12))
-			create_platform(Rect2(365, 190, 105, 12))
-			for position in [Vector2(90, 236), Vector2(190, 198), Vector2(286, 236), Vector2(405, 178), Vector2(510, 236), Vector2(586, 236)]:
+			# Deserto: chão rachado e os dois grandes pilares de pedra.
+			create_platform(Rect2(0, 258, 640, 62))
+			create_platform(Rect2(164, 159, 127, 12))
+			create_platform(Rect2(400, 116, 134, 12))
+			for position in [Vector2(92, 252), Vector2(220, 153), Vector2(324, 252), Vector2(466, 110), Vector2(548, 252), Vector2(606, 252)]:
 				create_food(position, Food.FoodKind.SEED)
 		1:
-			for rect in [Rect2(80, 198, 105, 11), Rect2(245, 153, 100, 11), Rect2(420, 105, 110, 11), Rect2(535, 182, 85, 11)]:
+			# Cactos: solo inferior e as quatro pedras flutuantes visíveis.
+			for rect in [Rect2(0, 274, 640, 46), Rect2(62, 156, 78, 11), Rect2(216, 192, 79, 11), Rect2(374, 225, 82, 11), Rect2(505, 156, 71, 11)]:
 				create_platform(rect)
-			for position in [Vector2(118, 184), Vector2(282, 139), Vector2(462, 91), Vector2(567, 168), Vector2(330, 236)]:
-				create_food(position, Food.FoodKind.NECTAR)
 		2:
-			for rect in [Rect2(65, 205, 115, 11), Rect2(235, 165, 120, 11), Rect2(410, 208, 120, 11), Rect2(500, 132, 110, 11)]:
-				create_platform(rect)
-			for index in range(6):
-				var positions := [Vector2(115, 188), Vector2(285, 148), Vector2(455, 191), Vector2(545, 115), Vector2(310, 236), Vector2(590, 236)]
-				create_food(positions[index], Food.FoodKind.LARVA, float(index) * 0.35)
+			# As plataformas da floresta ficam editáveis em Fase4.tscn.
+			pass
+
+func set_stage_three_platforms_enabled(enabled: bool) -> void:
+	stage_three_platforms.visible = enabled
+	for platform in stage_three_platforms.get_children():
+		platform.set_stage_enabled(enabled)
+
+func set_cactus_flowers_enabled(enabled: bool) -> void:
+	cactus_flowers.visible = enabled
+	for flower in cactus_flowers.get_children():
+		flower.set_stage_enabled(enabled)
 
 func create_platform(rect: Rect2) -> void:
-	var body := StaticBody2D.new()
-	body.position = rect.get_center()
-	body.collision_layer = 2
-	body.collision_mask = 0
-	var shape := CollisionShape2D.new()
-	var rectangle := RectangleShape2D.new()
-	rectangle.size = rect.size
-	shape.shape = rectangle
-	body.add_child(shape)
-	platforms.add_child(body)
+	var platform := PlatformScene.instantiate()
+	platforms.add_child(platform)
+	platform.setup(rect)
 
 func create_food(position_value: Vector2, kind: Food.FoodKind, offset := 0.0) -> void:
-	var food := Node2D.new()
-	food.set_script(Food)
+	var food := FoodScene.instantiate()
 	foods.add_child(food)
 	food.position = position_value
 	food.setup(kind, offset)
@@ -161,7 +174,15 @@ func _physics_process(delta: float) -> void:
 func update_nearby_food() -> void:
 	var closest: Node2D = null
 	var closest_distance := 42.0
-	for food in foods.get_children():
+	var active_foods: Array[Node]
+	match island:
+		1:
+			active_foods = cactus_flowers.get_children()
+		2:
+			active_foods = larvae.get_children()
+		_:
+			active_foods = foods.get_children()
+	for food in active_foods:
 		if not food.active:
 			continue
 		var distance := player.global_position.distance_to(food.global_position)

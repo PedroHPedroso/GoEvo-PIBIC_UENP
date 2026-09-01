@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cv7872opcv1lr"]
+
+[ext_resource type="Script" uid="uid://dwhbs7cfhnuv0" path="res://Scripts/fase_4_cenario.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bisvoldktsipd" path="res://Animações/Fase4/Sprites/ilha_sementes.png" id="2_seeds"]
+[ext_resource type="Texture2D" uid="uid://dj3kcp3qhhofp" path="res://Animações/Fase4/Sprites/ilha_cactos.png" id="3_cacti"]
+[ext_resource type="Texture2D" uid="uid://73325ttskndq" path="res://Animações/Fase4/Sprites/ilha_troncos.png" id="4_logs"]
+
+[node name="Cenario" type="Node2D" unique_id=286166576]
+script = ExtResource("1_script")
+
+[node name="IlhaSementes" type="Sprite2D" parent="." unique_id=660962410]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_seeds")
+centered = false
+
+[node name="IlhaCactos" type="Sprite2D" parent="." unique_id=1974807725]
+texture_filter = 1
+texture = ExtResource("3_cacti")
+centered = false
+
+[node name="IlhaTroncos" type="Sprite2D" parent="." unique_id=1933011026]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_logs")
+centered = false
