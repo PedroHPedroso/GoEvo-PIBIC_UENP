@@ -8,3 +8,10 @@
 .godot/editor/*cfg
 .godot/*.log
 .godot/imported/*.md5
+**/bin/
+**/obj/
+**/node_modules/
+.vercel/
+.env
+.env.*
+!.env.example

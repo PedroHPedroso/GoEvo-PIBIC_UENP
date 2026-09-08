@@ -32,7 +32,7 @@ func iniciar_ataque(posicao_player: Vector2) -> void:
 		estado_atual = Estado.PREPARANDO_MERGULHO
 		
 		# Pequeno delay antes do rasante
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5, false).timeout
 		if current_version == attack_version and estado_atual == Estado.PREPARANDO_MERGULHO:
 			estado_atual = Estado.MERGULHANDO
 

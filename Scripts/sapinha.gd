@@ -111,13 +111,13 @@ func atualizar_animacao_da_fala(indice: int) -> void:
 	anim.play(animacoes_falas[indice])
 		
 func mostrar_texto_com_efeito(texto: String, versao_atual: int):
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false).timeout
 	if versao_atual != versao_dialogo or not falando:
 		return
 
 	for letra in texto:
 		texto_dialogo.text += letra
-		await get_tree().create_timer(0.02).timeout
+		await get_tree().create_timer(0.02, false).timeout
 		if versao_atual != versao_dialogo or not falando:
 			return
 	pode_avancar = true

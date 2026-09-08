@@ -6,6 +6,7 @@
   <meta name="description" content="GoEvo — Opções do jogo. Ajuste o volume do som e outras configurações." />
   <title>GoEvo — Opções</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="game-session.js" defer></script>
   <style>
     /* ── Estilos exclusivos da tela de Opções ── */
 
@@ -213,8 +214,8 @@
 
       <!-- ── NOTA INFORMATIVA ── -->
       <p class="info-note" role="note">
-        ◆ As configurações serão salvas<br/>
-        quando o jogo iniciar
+        ◆ O volume é salvo automaticamente<br/>
+        e também vale para o jogo
       </p>
 
       <div class="pixel-divider" role="separator"></div>
@@ -243,7 +244,7 @@
       OPÇÕES
     </span>
     <span class="status-text">⚙ CONFIGURAÇÕES</span>
-    <span class="status-text">🔊 SOM: 70%</span>
+    <span class="status-text" id="volume-status">🔊 SOM: 70%</span>
   </footer>
 
 </body>

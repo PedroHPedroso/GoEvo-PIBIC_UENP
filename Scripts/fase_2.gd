@@ -29,6 +29,7 @@ var current_stage := 1
 var finishing_phase := false
 
 func _ready() -> void:
+	GestaoJogo.iniciar_fase(2)
 	completion_panel.visible = false
 	completion_panel.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	player.predador_alerta.connect(_on_predator_alert)
@@ -94,6 +95,7 @@ func complete_phase() -> void:
 	selection_panel.visible = false
 	completion_panel.visible = true
 	get_tree().paused = true
-	await get_tree().create_timer(3.0).timeout
+	await GestaoJogo.esperar_transicao(3.0)
+	GestaoJogo.concluir_fase()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Cenas/Fase3/Fase3.tscn")

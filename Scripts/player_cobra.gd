@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED := 132.0
 const WORLD_BOUNDS := Rect2(18, 96, 1882, 178)
 const SKIN_ROOT := "res://Animações/Fase3/Sprites/Peles/"
+const SEGMENT5_REFERENCE_REGION := Vector2(212.0, 52.0)
+const SEGMENT5_REFERENCE_SCALE := Vector2(0.075, 0.07)
 const SHELTER_ZONES: Array[Rect2] = [
 	Rect2(1518, 205, 105, 48),
 	Rect2(1690, 105, 96, 45),
@@ -165,6 +167,13 @@ func refresh_pattern_visuals() -> void:
 		if ResourceLoader.exists(segment_path):
 			segment.texture = load(segment_path)
 			segment.region_rect = get_segment_region(segment_number, color_key)
+			if segment_number == 5:
+				# Normaliza vermelho e preto para o mesmo tamanho visual do amarelo.
+				var region_size := segment.region_rect.size
+				segment.scale = Vector2(
+					SEGMENT5_REFERENCE_SCALE.x * SEGMENT5_REFERENCE_REGION.x / region_size.x,
+					SEGMENT5_REFERENCE_SCALE.y * SEGMENT5_REFERENCE_REGION.y / region_size.y
+				)
 		else:
 			segment.texture = null
 			segment.visible = false
@@ -184,9 +193,10 @@ func refresh_head() -> void:
 		"preto": "Cabeca_preta.png",
 	}[color_key]
 	var regions := {
-		"vermelho": Rect2(876, 505, 167, 67),
-		"amarelo": Rect2(872, 506, 173, 65),
-		"preto": Rect2(873, 506, 173, 67),
+		# As cabeças atuais são imagens individuais, não folhas de sprites.
+		"vermelho": Rect2(0, 0, 250, 71),
+		"amarelo": Rect2(0, 0, 250, 75),
+		"preto": Rect2(0, 0, 250, 72),
 	}
 	var head_path: String = SKIN_ROOT + file_name
 	if ResourceLoader.exists(head_path):
@@ -223,9 +233,10 @@ func get_segment_region(segment_number: int, color_key: String) -> Rect2:
 			"vermelho": Rect2(0, 0, 150, 61),
 		},
 		5: {
-			"amarelo": Rect2(803, 494, 312, 88),
-			"preto": Rect2(803, 496, 312, 85),
-			"vermelho": Rect2(804, 496, 312, 85),
+			# Regiões opacas dos novos PNGs, que possuem telas transparentes maiores.
+			"amarelo": Rect2(564, 359, 212, 52),
+			"preto": Rect2(430, 266, 163, 43),
+			"vermelho": Rect2(231, 237, 544, 133),
 		},
 	}
 	return regions[segment_number][color_key]
