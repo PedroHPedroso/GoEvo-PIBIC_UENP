@@ -62,7 +62,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1, 1)
 
 [node name="Segmento5" type="Sprite2D" parent="CobraVisual" unique_id=281312623]
-visible = false
 z_index = 1
 texture_filter = 1
 material = SubResource("Material_remove_white")

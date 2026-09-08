@@ -5,6 +5,9 @@ extends Node
 
 var trocando_fase: bool = false
 
+func _ready() -> void:
+	GestaoJogo.iniciar_fase(1)
+
 # ============================================
 # FASE CONCLUÍDA
 # ============================================
@@ -24,10 +27,11 @@ func finalizar_fase() -> void:
 
 	hud.mostrar_fase_concluida()
 
-	await get_tree().create_timer(3.0).timeout
+	await GestaoJogo.esperar_transicao(3.0)
 
 	print("Indo para Fase 2...")
 
+	GestaoJogo.concluir_fase()
 	var erro = get_tree().change_scene_to_file("res://Cenas/Fase2/Fase2.tscn")
 
 	if erro != OK:

@@ -14,6 +14,10 @@ config/name="GoEvo"
 run/main_scene="uid://dkgxnnvi6vk30"
 config/features=PackedStringArray("4.7")
 
+[autoload]
+
+GestaoJogo="*res://Scripts/gestao_jogo.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -24,6 +28,10 @@ window/stretch/mode="viewport"
 
 theme/custom_font="uid://vbwj8al8o7qa"
 common/drop_mouse_on_gui_input_disabled=true
+
+[goevo]
+
+portal/menu_url="http://localhost:5286/index.html"
 
 [input]
 

@@ -55,6 +55,7 @@ var failed := false
 var feedback_tween: Tween
 
 func _ready() -> void:
+	GestaoJogo.iniciar_fase(4)
 	larvae.visible = false
 	set_cactus_flowers_enabled(false)
 	set_stage_three_platforms_enabled(false)
@@ -249,6 +250,8 @@ func complete_island() -> void:
 	if island_complete:
 		return
 	island_complete = true
+	if island == 2:
+		GestaoJogo.concluir_fase()
 	player.pode_mover = false
 	interaction_label.visible = false
 	summary_title.text = "Nicho explorado"
@@ -272,11 +275,7 @@ func continue_from_summary() -> void:
 func show_final_synthesis() -> void:
 	summary_title.text = "Parabéns, você concluiu a Fase 4!"
 	summary_body.text = "IRRADIAÇÃO ADAPTATIVA\n\nUma espécie ancestral colonizou o arquipélago. Em cada ilha, alimentos diferentes favoreceram bicos diferentes. Ao longo das gerações, essas pressões seletivas originaram linhagens especializadas e novas espécies."
-	summary_button.text = "Recomeçar jornada"
+	summary_button.text = "Retornar ao menu"
 	for connection in summary_button.pressed.get_connections():
 		summary_button.pressed.disconnect(connection.callable)
-	summary_button.pressed.connect(restart_game)
-
-func restart_game() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Cenas/Fase1/Fase1.tscn")
+	summary_button.pressed.connect(GestaoJogo.voltar_ao_menu)

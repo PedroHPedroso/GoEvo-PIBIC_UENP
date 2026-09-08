@@ -6,6 +6,7 @@
   <meta name="description" content="GoEvo — Cadastro do jogador. Crie seu perfil para começar a aventura de biologia evolutiva!" />
   <title>GoEvo — Cadastro</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="cadastro.js" defer></script>
   <style>
     /* ── Estilos exclusivos da tela de Cadastro ── */
 
@@ -170,6 +171,29 @@
       opacity: 1;
       color: var(--verde-neon);
     }
+
+    .form-status {
+      margin-top: 1rem;
+      font-family: var(--fonte-display);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      text-align: center;
+      color: var(--amarelo-claro);
+    }
+
+    .form-status[data-type="success"] {
+      color: var(--verde-neon);
+    }
+
+    .form-status[data-type="error"] {
+      color: #e57373;
+    }
+
+    #btn-finalizar:disabled {
+      cursor: wait;
+      filter: grayscale(0.35);
+      opacity: 0.75;
+    }
   </style>
 </head>
 <body>
@@ -246,17 +270,17 @@
               required
               minlength="2"
               maxlength="50"
-              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,50}"
-              autocomplete="given-name"
+              pattern="\p{L}+(?:[ .'\-]\p{L}+)*"
+              autocomplete="name"
               aria-required="true"
               aria-describedby="nome-hint nome-error"
-              title="Apenas letras e espaços (sem números ou caracteres especiais)"
+              title="Use letras, espaços, hífenes ou apóstrofos"
             />
             <span class="input-check-icon" aria-hidden="true">✔</span>
           </div>
           <span class="field-valid-indicator" aria-live="polite">✔ Nome válido!</span>
-          <span class="field-error-msg" id="nome-error" aria-live="polite" role="alert">✘ Apenas letras e espaços (mín. 2, máx. 50 caracteres)</span>
-          <span class="form-hint" id="nome-hint">Máx. 50 caracteres · Somente letras</span>
+          <span class="field-error-msg" id="nome-error" aria-live="polite" role="alert">✘ Informe de 2 a 50 caracteres</span>
+          <span class="form-hint" id="nome-hint">Pode ser seu nome ou apelido · Máx. 50 caracteres</span>
         </div>
 
         <!-- ── CAMPO: Idade ── -->
@@ -302,17 +326,16 @@
               required
               minlength="3"
               maxlength="100"
-              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s\.]{3,100}"
               autocomplete="organization"
               aria-required="true"
               aria-describedby="inst-hint inst-error"
-              title="Apenas letras e espaços (sem números ou caracteres especiais)"
+              title="Informe o nome da instituição de ensino"
             />
             <span class="input-check-icon" aria-hidden="true">✔</span>
           </div>
           <span class="field-valid-indicator" aria-live="polite">✔ Instituição válida!</span>
-          <span class="field-error-msg" id="inst-error" aria-live="polite" role="alert">✘ Apenas letras e espaços (mín. 3, máx. 100 caracteres)</span>
-          <span class="form-hint" id="inst-hint">Máx. 100 caracteres · Somente letras</span>
+          <span class="field-error-msg" id="inst-error" aria-live="polite" role="alert">✘ Informe de 3 a 100 caracteres</span>
+          <span class="form-hint" id="inst-hint">Máx. 100 caracteres</span>
         </div>
 
         <!-- ── CAMPO: Nível de Ensino ── -->
@@ -350,6 +373,14 @@
             ▶&nbsp;&nbsp;INICIAR AVENTURA!
           </button>
         </div>
+
+        <p
+          id="cadastro-status"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></p>
 
       </form><!-- /form-cadastro -->
 

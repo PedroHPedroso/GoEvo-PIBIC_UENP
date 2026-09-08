@@ -1,0 +1,9 @@
+**/bin
+**/obj
+**/node_modules
+backend/legacy
+backend/tests
+**/.env
+**/.env.*
+**/*.import
+**/*.md

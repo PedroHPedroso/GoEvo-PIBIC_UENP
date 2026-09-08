@@ -38,6 +38,7 @@ var badger_confused_pause := 0.0
 var last_status := ""
 
 func _ready() -> void:
+	GestaoJogo.iniciar_fase(3)
 	create_pigments()
 	register_enemies()
 	update_pattern_hud()
@@ -282,10 +283,7 @@ func win_level() -> void:
 func end_action() -> void:
 	get_tree().paused = false
 	if victory:
+		GestaoJogo.concluir_fase()
 		get_tree().change_scene_to_file("res://Cenas/Fase4/Fase4.tscn")
 	else:
 		get_tree().reload_current_scene()
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and not pattern_names.is_empty() and not game_over and not victory:
-		undo_last_pigment()

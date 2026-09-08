@@ -2,6 +2,8 @@
 
 GoEvo é um jogo educacional 2D desenvolvido no Godot Engine. A experiência apresenta conceitos de evolução e seleção natural por meio de quatro fases, cada uma com personagens, objetivos e mecânicas próprias.
 
+O portal Web possui cadastro com API C# e PostgreSQL. Consulte [as instruções do backend](App/backend/README.md) para iniciar o Docker, executar a API e verificar os cadastros.
+
 ## Sumário
 
 - [Requisitos](#requisitos)
