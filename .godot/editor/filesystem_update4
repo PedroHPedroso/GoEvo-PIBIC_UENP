@@ -1,3 +1,10 @@
-res://Scripts/gestao_jogo.gd
+res://Scripts/fase_1.gd
+res://Scripts/fase_3.gd
+res://default_env.tres
+res://Cenas/Fase1/Fase1.tscn
+res://Cenas/Shaders/MovementClouds.gdshader
+res://Cenas/Shaders/WaterMovement.gdshader
+res://Scripts/hud_educativo.gd
+res://Scripts/mosquinha.gd
 res://Scripts/predador.gd
-res://Scripts/sapinha.gd
+res://Scripts/fase_4.gd

@@ -3,6 +3,7 @@ extends Node2D
 const Food = preload("res://Scripts/recurso_fase_4.gd")
 const FoodScene := preload("res://Cenas/Fase4/recurso.tscn")
 const PlatformScene := preload("res://Cenas/Fase4/plataforma.tscn")
+const EducationalHUDScene := preload("res://Cenas/HUDEducativo.tscn")
 
 const ISLAND_NAMES := ["Ilha das Sementes Duras", "Ilha dos Cactos", "Ilha dos Troncos Antigos"]
 const ISLAND_SUBTITLES := ["Geospiza fortis", "Geospiza scandens", "Camarhynchus pallidus"]
@@ -17,6 +18,7 @@ const BEAK_DESCRIPTIONS := [
 	["Fino e flexível", "Curvo e arredondado", "Reto, rígido e pontiagudo"],
 ]
 const CORRECT_BEAK := [0, 1, 2]
+const ENERGY_GOAL := 90.0
 const SPAWN_POSITIONS := [Vector2(38, 244), Vector2(38, 260), Vector2(158, 264)]
 const SUMMARIES := [
 	"Sementes duras favorecem bicos robustos e profundos. A força do alicate rompe a casca e transforma o alimento em energia.",
@@ -53,6 +55,7 @@ var time_left := 48.0
 var island_complete := false
 var failed := false
 var feedback_tween: Tween
+var educational_hud: CanvasLayer
 
 func _ready() -> void:
 	GestaoJogo.iniciar_fase(4)
@@ -62,6 +65,13 @@ func _ready() -> void:
 	selection.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	summary.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	summary_button.pressed.connect(continue_from_summary)
+	selection.visible = false
+	summary.visible = false
+	educational_hud = EducationalHUDScene.instantiate()
+	add_child(educational_hud)
+	get_tree().paused = true
+	educational_hud.mostrar_como_jogar(4)
+	await educational_hud.continuar
 	show_beak_selection()
 
 func show_beak_selection() -> void:
@@ -169,20 +179,15 @@ func _physics_process(delta: float) -> void:
 	update_hud()
 	update_nearby_food()
 
+	if island_complete:
+		return
 	if time_left <= 0.0 or energy <= 0.0:
 		fail_island()
 
 func update_nearby_food() -> void:
 	var closest: Node2D = null
 	var closest_distance := 42.0
-	var active_foods: Array[Node]
-	match island:
-		1:
-			active_foods = cactus_flowers.get_children()
-		2:
-			active_foods = larvae.get_children()
-		_:
-			active_foods = foods.get_children()
+	var active_foods := current_island_foods()
 	for food in active_foods:
 		if not food.active:
 			continue
@@ -198,6 +203,24 @@ func update_nearby_food() -> void:
 	if Input.is_action_just_pressed("interacao"):
 		attempt_feed(closest)
 
+func current_island_foods() -> Array[Node]:
+	match island:
+		1:
+			return cactus_flowers.get_children()
+		2:
+			return larvae.get_children()
+		_:
+			return foods.get_children()
+
+func all_food_consumed() -> bool:
+	var island_foods := current_island_foods()
+	if island_foods.is_empty():
+		return false
+	for food in island_foods:
+		if food.active:
+			return false
+	return true
+
 func attempt_feed(food: Node2D) -> void:
 	if selected_beak != CORRECT_BEAK[island]:
 		apply_feed_failure("O bico não consegue acessar esse alimento.")
@@ -211,7 +234,7 @@ func attempt_feed(food: Node2D) -> void:
 	time_left += 2.0
 	var effects := ["CRACK!  +energia", "SLURP!  +energia", "TUC-TUC!  +energia"]
 	show_feedback(effects[island], Color("f2d15f"))
-	if energy >= 90.0:
+	if energy >= ENERGY_GOAL or all_food_consumed():
 		complete_island()
 
 func apply_feed_failure(message: String) -> void:
@@ -273,9 +296,7 @@ func continue_from_summary() -> void:
 	show_final_synthesis()
 
 func show_final_synthesis() -> void:
-	summary_title.text = "Parabéns, você concluiu a Fase 4!"
-	summary_body.text = "IRRADIAÇÃO ADAPTATIVA\n\nUma espécie ancestral colonizou o arquipélago. Em cada ilha, alimentos diferentes favoreceram bicos diferentes. Ao longo das gerações, essas pressões seletivas originaram linhagens especializadas e novas espécies."
-	summary_button.text = "Retornar ao menu"
-	for connection in summary_button.pressed.get_connections():
-		summary_button.pressed.disconnect(connection.callable)
-	summary_button.pressed.connect(GestaoJogo.voltar_ao_menu)
+	summary.visible = false
+	educational_hud.mostrar_conclusao(4, "Retornar ao menu")
+	await educational_hud.continuar
+	GestaoJogo.voltar_ao_menu()

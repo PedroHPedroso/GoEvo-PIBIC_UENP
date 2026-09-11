@@ -84,7 +84,7 @@ O jogador controla um sapo em um cenário de brejo. O objetivo é capturar dez m
 
 A fase representa o caso das mariposas de Manchester. Em cada um dos quatro cenários, o jogador escolhe uma mariposa branca ou preta e deve encontrar uma região de tronco compatível com sua cor.
 
-Para confirmar a camuflagem, é necessário permanecer sobre a área correta e manter `E` ou `Espaço` pressionado por cinco segundos. Uma combinação incorreta entre a cor da mariposa e a superfície do tronco ativa o predador.
+Para confirmar a camuflagem, é necessário permanecer sobre a área correta e manter `E` ou `Espaço` pressionado por 2,5 segundos. Uma combinação incorreta entre a cor da mariposa e a superfície do tronco ativa o predador.
 
 Na terceira etapa, cada tronco possui regiões claras e escuras independentes. A cor selecionada precisa coincidir especificamente com a parte do tronco utilizada para o pouso.
 
@@ -100,7 +100,7 @@ O padrão correto ajuda a dissuadir predadores vulneráveis ao mimetismo. A tecl
 
 ### Fase 4 — Irradiação adaptativa
 
-O jogador acompanha um tentilhão em três ilhas com fontes de alimento diferentes. Em cada ilha, deve analisar o ambiente, escolher o formato de bico adequado e coletar alimento antes que o tempo ou a energia se esgotem.
+O jogador acompanha um tentilhão em três ilhas com fontes de alimento diferentes. Em cada ilha, deve analisar o ambiente, escolher o formato de bico adequado e coletar alimento antes que o tempo ou a energia se esgotem. A ilha é concluída ao alcançar 90 de energia ou consumir todos os alimentos disponíveis.
 
 | Ilha | Recurso predominante | Adaptação adequada |
 | --- | --- | --- |

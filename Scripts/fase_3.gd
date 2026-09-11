@@ -2,6 +2,7 @@ extends Node2D
 
 const PigmentScene := preload("res://Cenas/Fase3/pigmento.tscn")
 const Predator = preload("res://Scripts/predador_fase_3.gd")
+const EducationalHUDScene := preload("res://Cenas/HUDEducativo.tscn")
 
 const RED := Color("db3f3f")
 const YELLOW := Color("f0d45a")
@@ -36,6 +37,7 @@ var badger_active := false
 var badger_shelter_phase := "chasing"
 var badger_confused_pause := 0.0
 var last_status := ""
+var educational_hud: CanvasLayer
 
 func _ready() -> void:
 	GestaoJogo.iniciar_fase(3)
@@ -43,11 +45,15 @@ func _ready() -> void:
 	register_enemies()
 	update_pattern_hud()
 	get_tree().paused = true
-	intro.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	intro.visible = false
 	end_panel.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$HUD/TopBar/Margin/HBox/PatternBlock/PatternLine/UndoButton.pressed.connect(undo_last_pigment)
-	$HUD/Intro/Panel/VBox/StartButton.pressed.connect(start_level)
 	end_button.pressed.connect(end_action)
+	educational_hud = EducationalHUDScene.instantiate()
+	add_child(educational_hud)
+	educational_hud.mostrar_como_jogar(3)
+	await educational_hud.continuar
+	start_level()
 
 func create_pigments() -> void:
 	var options: Array[Array] = [
@@ -274,16 +280,16 @@ func win_level() -> void:
 		return
 	victory = true
 	player.pode_mover = false
-	end_title.text = "Parabéns, você concluiu a Fase 3!"
-	end_body.text = "Blefe perfeito! A falsa-coral sobreviveu ao imitar o padrão de alerta da coral verdadeira e escapou do predador imune."
-	end_button.text = "Continuar para a Fase 4"
-	end_panel.visible = true
+	GestaoJogo.concluir_fase()
 	get_tree().paused = true
+	educational_hud.mostrar_conclusao(3, "Continuar para a Fase 4")
+	await educational_hud.continuar
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Cenas/Fase4/Fase4.tscn")
 
 func end_action() -> void:
 	get_tree().paused = false
 	if victory:
-		GestaoJogo.concluir_fase()
 		get_tree().change_scene_to_file("res://Cenas/Fase4/Fase4.tscn")
 	else:
 		get_tree().reload_current_scene()

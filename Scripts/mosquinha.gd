@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var direction_change_interval: float = 0.4
 @export var vertical_variation: float = 0.1
 @export var acceleration: float = 600.0
+@export_range(0.0, 320.0, 1.0) var flight_ceiling_y: float = 260.0
 
 @onready var texture: Sprite2D = $Mosca
 @onready var wall_detector: RayCast2D = $wallDetector
@@ -43,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		change_timer = direction_change_interval
 
 	move_and_slide()
+	apply_flight_ceiling()
 
 	# Caso colida diretamente com alguma superfície,
 	# rebate a direção de acordo com a colisão.
@@ -52,6 +54,17 @@ func _physics_process(delta: float) -> void:
 		target_direction = target_direction.normalized()
 
 	update_sprite_direction()
+
+
+func apply_flight_ceiling() -> void:
+	if global_position.y >= flight_ceiling_y:
+		return
+
+	global_position.y = flight_ceiling_y
+	velocity.y = absf(velocity.y)
+	target_direction.y = absf(target_direction.y)
+	target_direction = target_direction.normalized()
+	change_timer = direction_change_interval
 
 
 func choose_new_direction() -> void:

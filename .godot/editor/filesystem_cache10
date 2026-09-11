@@ -1,11 +1,12 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1788885883
+::res://::1789092847
 default_env.tres::Environment::8504028626863088688::1788872479::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1788838231::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1788909513::0::1::::<><><>0<>0<><>::
 Fase2.md::TextFile::-1::1786987408::0::1::::<><><>0<>0<><>::
 Fase3.md::TextFile::-1::1787012753::0::1::::<><><>0<>0<><>::
 Fase4.md::TextFile::-1::1787013703::0::1::::<><><>0<>0<><>::
 GUIA_SPRITES_FASES_3_E_4.md::TextFile::-1::1787168103::0::1::::<><><>0<>0<><>::
+HudsFases.md::TextFile::-1::1789092850::0::1::::<><><>0<>0<><>::
 IconeMosca.png::CompressedTexture2D::2388624654580420504::1786722890::1786722895::1::::<><><>0<>0<>62dc2f8a1d7de5b10e9478af0d3892b5<>res://.godot/imported/IconeMosca.png-1b981d4a52f45b3cb4ff457f76f44810.ctex::
 manifest.json::JSON::-1::1778276908::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1788833967::0::1::::<><><>0<>0<><>::
@@ -185,10 +186,12 @@ Rock_shape (16 x 16).png::CompressedTexture2D::7034597155972078759::1594826148::
 Snack_machine_Bench_Trash_bin (16 x 16).png::CompressedTexture2D::969950283703875476::1594737290::1784004147::1::::<><><>0<>0<>fb62d7a72ef9c5d1e0cd87d091d550ad<>res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-d0154940cbb00cdd61f21ef78e049461.ctex::
 Water_frames (16 x 32).png::CompressedTexture2D::4272817443108352227::1594736418::1784004147::1::::<><><>0<>0<>b7ceadb7739cbd6eb6996d14a5225b53<>res://.godot/imported/Water_frames (16 x 32).png-7150e252262eb72ab103a44460828bad.ctex::
 ::res://App/::1788833186
-::res://App/Front/::1788838229
+::res://App/Front/::1788910254
 bg_jungle.jpg::CompressedTexture2D::7089091089644695257::1786407496::1786408304::1::::<><><>0<>0<>26dfa54802b5541541949879ccb5bdab<>res://.godot/imported/bg_jungle.jpg-5f614da2f9dba0430e0cd5d795816f05.ctex::
 logo_goevo.jpg::CompressedTexture2D::4313977256462473048::1786408284::1786408372::1::::<><><>0<>0<>a2b1f10b1edb7e0a962349ce894969d0<>res://.godot/imported/logo_goevo.jpg-9edc44d25441f017682d9d32e59a2d19.ctex::
-::res://Cenas/::1788886309
+vercel.json::JSON::-1::1788910976::0::1::::<><><>0<>0<><>::
+::res://Cenas/::1789093262
+HUDEducativo.tscn::PackedScene::-1::1789093262::0::1::::<><><>0<>0<><>::res://Scripts/hud_educativo.gd<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf
 ::res://Cenas/Fase1/::1788224085
 Fase1.tscn::PackedScene::7874957175788570321::1788232863::0::1::::<><><>0<>0<><>::uid://bijn6w0nosf7q::::res://Scripts/fase_1.gd<>uid://dfc5isggp5fcm::::res://Animações/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png<>uid://dflq4fn1465y0::::res://Animações/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png<>uid://cibkbsxwn8sw4::::res://Animações/Pantano2.1.png<>uid://dr588kaayc0yq::::res://Animações/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png<>uid://dps5ds35qpe6y::::res://Animações/Pantano2.png<>uid://bdhe3klboqpq::::res://Animações/vitoriaregia (1).png<>uid://ck3gwqijhtlc4::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png<>uid://546cdadvr25c::::res://Animações/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png<>uid://bocxkhaffnrwc::::res://Animações/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png<>uid://bfln1sq27jk3r::::res://Cenas/Fase1/player.tscn<>uid://bf6264xjhw75y::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png<>uid://dvl4bjux11kco::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png<>uid://c5i2eoyhegvtn::::res://Cenas/Shaders/MovementClouds.gdshader<>uid://brj83sgs6m87::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png<>uid://b240klwe3mair::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png<>uid://8d0bl1pjmy50::::res://Animações/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png<>uid://j334e72fsyex::::res://Cenas/Shaders/WaterMovement.gdshader<>uid://b74nwyv4ei7ss::::res://Cenas/Fase1/sapinha.tscn<>uid://bav2ub0blfxkv::::res://Scripts/hud.gd<>uid://c4iy54wjr51yn::::res://Cenas/Fase1/mosquinha.tscn<>uid://babckfy8m567m::::res://IconeMosca.png<>uid://vbwj8al8o7qa::::res://Fonts/determination.ttf
 mosquinha.tscn::PackedScene::6826345194160859333::1788232865::0::1::::<><><>0<>0<><>::uid://d6sgi1t16ne8::::res://Scripts/mosquinha.gd<>uid://8paw1r3v31x8::::res://Animações/Moscas.png<>uid://cns5akhgqpmvf::::res://Scripts/hurtbox.gd
@@ -226,15 +229,16 @@ WaterMovement.gdshader::Shader::691254294437983551::1788812154::0::1::::<><><>0<
 determination.ttf::FontFile::1477383673953777408::1786630177::1786630194::1::::<><><>0<>0<>ce7293e6350256861906e370c3f5a4d4<>res://.godot/imported/determination.ttf-82c4dba179de8baa60453d96b6053b5c.fontdata::
 license.txt::TextFile::-1::1786630177::0::1::::<><><>0<>0<><>::
 readme.txt::TextFile::-1::1786630177::0::1::::<><><>0<>0<><>::
-::res://Scripts/::1788886308
-fase_1.gd::GDScript::2967356707844811060::1788838371::0::1::::<>Node<><>0<>0<><>::
-fase_2.gd::GDScript::4921655014634485926::1788838372::0::1::::<>Node2D<><>0<>0<><>::
-fase_3.gd::GDScript::482624596400163938::1788838372::0::1::::<>Node2D<><>0<>0<><>::
-fase_4.gd::GDScript::8824349818215817839::1788838373::0::1::::<>Node2D<><>0<>0<><>::
+::res://Scripts/::1789093263
+fase_1.gd::GDScript::2967356707844811060::1789093307::0::1::::<>Node<><>0<>0<><>::
+fase_2.gd::GDScript::4921655014634485926::1789093308::0::1::::<>Node2D<><>0<>0<><>::
+fase_3.gd::GDScript::482624596400163938::1789093309::0::1::::<>Node2D<><>0<>0<><>::
+fase_4.gd::GDScript::8824349818215817839::1789093310::0::1::::<>Node2D<><>0<>0<><>::
 fase_4_cenario.gd::GDScript::8717961800751368363::1788198837::0::1::::<>Node2D<><>0<>0<><>::
 flor_cacto_fase_4.gd::GDScript::1872046440851244990::1788222646::0::1::::<>Sprite2D<><>0<>0<><>::
 gestao_jogo.gd::GDScript::7915233427760381047::1788886306::0::1::::<>Node<><>0<>0<><>::
 hud.gd::GDScript::2431447782414967933::1788223307::0::1::::<>CanvasLayer<><>0<>0<><>::
+hud_educativo.gd::GDScript::3300769932674185598::1789093263::0::1::::<>CanvasLayer<><>0<>0<><>::
 hurtbox.gd::GDScript::5724277180378423415::1786722499::0::1::::<>Area2D<><>0<>0<><>::
 larva_fase_4.gd::GDScript::2251258545813363168::1788220549::0::1::::<>Sprite2D<><>0<>0<><>::
 mosquinha.gd::GDScript::275666323174143317::1786718045::0::1::::<>CharacterBody2D<><>0<>0<><>::
