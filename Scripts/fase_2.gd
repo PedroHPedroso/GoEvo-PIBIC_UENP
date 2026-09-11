@@ -1,5 +1,7 @@
 extends Node2D
 
+const EducationalHUDScene := preload("res://Cenas/HUDEducativo.tscn")
+
 const STAGE_NAMES := [
 	"CAMPO PRÉ-INDUSTRIAL",
 	"BÉTULAS CLARAS",
@@ -27,6 +29,7 @@ const PLAYER_SPAWN := Vector2(320, 88)
 
 var current_stage := 1
 var finishing_phase := false
+var educational_hud: CanvasLayer
 
 func _ready() -> void:
 	GestaoJogo.iniciar_fase(2)
@@ -34,6 +37,12 @@ func _ready() -> void:
 	completion_panel.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	player.predador_alerta.connect(_on_predator_alert)
 	configure_stage(1)
+	educational_hud = EducationalHUDScene.instantiate()
+	add_child(educational_hud)
+	get_tree().paused = true
+	educational_hud.mostrar_como_jogar(2)
+	await educational_hud.continuar
+	get_tree().paused = false
 
 func configure_stage(stage: int) -> void:
 	current_stage = clampi(stage, 1, 4)
@@ -93,9 +102,9 @@ func complete_phase() -> void:
 	player.pode_mover = false
 	player.velocity = Vector2.ZERO
 	selection_panel.visible = false
-	completion_panel.visible = true
-	get_tree().paused = true
-	await GestaoJogo.esperar_transicao(3.0)
 	GestaoJogo.concluir_fase()
+	get_tree().paused = true
+	educational_hud.mostrar_conclusao(2, "Continuar para a Fase 3")
+	await educational_hud.continuar
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Cenas/Fase3/Fase3.tscn")

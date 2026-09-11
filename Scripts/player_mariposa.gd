@@ -8,6 +8,7 @@ var cor_atual: CorMariposa = CorMariposa.NENHUMA
 
 const SPEED: float = 220.0
 const GRAVIDADE_QUEDA: float = 350.0
+const CAMOUFLAGE_DURATION: float = 2.5
 
 var zona_atual: Area2D = null
 var zonas_proximas: Array[Area2D] = []
@@ -70,7 +71,7 @@ func iniciar_agarro() -> void:
 	agarrado = true
 	anim.stop()
 	if zona_atual.cor_superficie == cor_atual:
-		timer_camuflagem.start(5.0)
+		timer_camuflagem.start(CAMOUFLAGE_DURATION)
 	else:
 		# Aciona alerta de predador por camuflagem errada
 		predador_alerta.emit(global_position)

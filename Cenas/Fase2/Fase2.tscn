@@ -220,7 +220,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.74, 0.79, 0.68, 1)
 theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 9
-text = "Segure E ou Espaço sobre o tronco por 5 segundos"
+text = "Segure E ou Espaço sobre o tronco por 2,5 segundos"
 horizontal_alignment = 2
 
 [node name="StatusLabel" type="Label" parent="HUD" unique_id=1346688943]

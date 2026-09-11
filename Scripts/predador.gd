@@ -15,6 +15,7 @@ var estado_atual: Estado = Estado.INATIVO
 var ponto_inicial: Vector2
 var alvo_posicao: Vector2
 var attack_version := 0
+var reiniciando_cena := false
 
 func _ready() -> void:
 	ponto_inicial = global_position
@@ -38,6 +39,7 @@ func iniciar_ataque(posicao_player: Vector2) -> void:
 
 func resetar() -> void:
 	attack_version += 1
+	reiniciando_cena = false
 	estado_atual = Estado.INATIVO
 	velocity = Vector2.ZERO
 	global_position = ponto_inicial
@@ -81,5 +83,10 @@ func atualizar_visual_retorno(direcao: Vector2) -> void:
 	sprite.flip_h = direcao.x < 0.0
 
 func _on_hitbox_area_body_entered(body: Node2D) -> void:
-	if body.name == "PlayerMariposa":
-		get_tree().reload_current_scene() # Game Over / Reiniciar
+	if body.name != "PlayerMariposa" or reiniciando_cena:
+		return
+
+	reiniciando_cena = true
+	estado_atual = Estado.INATIVO
+	velocity = Vector2.ZERO
+	get_tree().call_deferred(&"reload_current_scene")

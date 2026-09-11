@@ -61,9 +61,9 @@ script = ExtResource("1_main")
 [node name="PlataformasEtapa3" type="Node2D" parent="." unique_id=1242539978]
 
 [node name="ChaoFloresta" parent="PlataformasEtapa3" unique_id=747686328 instance=ExtResource("6_platform")]
-position = Vector2(274.99997, 299)
+position = Vector2(320, 299)
 rotation = -0.004754968
-size = Vector2(640, 42)
+size = Vector2(680, 42)
 
 [node name="GalhoEsquerdo" parent="PlataformasEtapa3" unique_id=1015310909 instance=ExtResource("6_platform")]
 position = Vector2(146, 160)
