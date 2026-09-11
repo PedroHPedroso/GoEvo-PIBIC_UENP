@@ -1,8 +1,8 @@
-res://Cenas/Fase1/Fase1.tscn::d4620fae70d1496f2a6ede236675a48d::1788232863::res://.godot/exported/133200997/export-7cfceb6cc8fe90040ff597163b7cfb99-Fase1.scn
+res://Cenas/Fase1/Fase1.tscn::6941a6b47f49723389ec1af3822274e2::1789094213::res://.godot/exported/133200997/export-7cfceb6cc8fe90040ff597163b7cfb99-Fase1.scn
 res://Cenas/Fase1/mosquinha.tscn::2633f61b3e1128d8a4d5cccf783eba46::1788232865::res://.godot/exported/133200997/export-3f37ba22f508c0549e9ba475c36233db-mosquinha.scn
 res://Cenas/Fase1/player.tscn::89387e0f41befcd3fe88577f2cda17c9::1788232866::res://.godot/exported/133200997/export-9d81a229e06d3be91a5a66e26b372cdc-player.scn
 res://Cenas/Fase1/sapinha.tscn::58b3fce848791f2912c2493278d88f5b::1788232867::res://.godot/exported/133200997/export-d56ad0f8d0c0437dd7dbd17aaee27fb4-sapinha.scn
-res://Cenas/Fase2/Fase2.tscn::6382c5ffbecd3db8425a26200e0bb2a7::1788232869::res://.godot/exported/133200997/export-68edd996c0110a0e8417c8e2489afac5-Fase2.scn
+res://Cenas/Fase2/Fase2.tscn::7ee74f1887e63fe5c0395420eb824160::1789094335::res://.godot/exported/133200997/export-68edd996c0110a0e8417c8e2489afac5-Fase2.scn
 res://Cenas/Fase2/PlayerMariposa.tscn::f03480d80a37c09c79c1c0c36be2ec78::1788232870::res://.godot/exported/133200997/export-4a5b4c5ffe04820b4707ffafd3d3b2c0-PlayerMariposa.scn
 res://Cenas/Fase2/predador.tscn::873eb3befdfe956b05c8474f54d7f97b::1788297429::res://.godot/exported/133200997/export-1a3ffcb6f192fe4bf4d603638d5bf7cc-predador.scn
 res://Cenas/Fase2/tronco_cenario_1.tscn::9e2cbc963108a4a4d80d1ac8b63a2fb3::1788232875::res://.godot/exported/133200997/export-d0d1707b508440002f3009055793e9d1-tronco_cenario_1.scn
@@ -17,10 +17,11 @@ res://Cenas/Fase3/pigmento.tscn::0d512a8887b1185b0b8918723618fb51::1788232889::r
 res://Cenas/Fase3/player_cobra.tscn::23c0f1dfcce13442e22b897fc01b6b3c::1788812154::res://.godot/exported/133200997/export-daa8da8bcd6ef8289678dd2b8c9d5a32-player_cobra.scn
 res://Cenas/Fase3/texugo.tscn::e59547be725252a1d1f22978a4d64c0f::1788232885::res://.godot/exported/133200997/export-0556be2c5d10fd35a20e9ea6a91ef260-texugo.scn
 res://Cenas/Fase4/cenario.tscn::6e06569e754becaf2e4c64d1f37fde93::1788232895::res://.godot/exported/133200997/export-14a32413f042d219339e820ee019b7e5-cenario.scn
-res://Cenas/Fase4/Fase4.tscn::819baafa8deaa79828e48618a4de594b::1788232893::res://.godot/exported/133200997/export-0bc645cba82842e80bc76d3530244ede-Fase4.scn
+res://Cenas/Fase4/Fase4.tscn::dddd07cb4c56b2d957b98d2dcb2738c6::1789094987::res://.godot/exported/133200997/export-0bc645cba82842e80bc76d3530244ede-Fase4.scn
 res://Cenas/Fase4/flor_cacto.tscn::a88a11f40261d4d4e409b806a1915e17::1788232897::res://.godot/exported/133200997/export-0557e220529cca44fcfd552709f29b92-flor_cacto.scn
 res://Cenas/Fase4/larva.tscn::826970c633af69884e59c528bdd6f3bd::1788232898::res://.godot/exported/133200997/export-c3cb2fd3d7815d0b32fa68e1eaf125ce-larva.scn
 res://Cenas/Fase4/plataforma.tscn::3c8f3bebb86c908587b1cb88103d6f90::1788232900::res://.godot/exported/133200997/export-da10b06cdf1e2bc3a1f15028b769023c-plataforma.scn
 res://Cenas/Fase4/player_tentilhao.tscn::685d445934918af667b300c66105929d::1788232901::res://.godot/exported/133200997/export-7b69e31014c0a689d1fa7622cc4d8516-player_tentilhao.scn
 res://Cenas/Fase4/recurso.tscn::407dab672145acf8a7f1c8c83973ed30::1788232903::res://.godot/exported/133200997/export-f25103cb752bf8123d091e390e050423-recurso.scn
-res://default_env.tres::36707e371dedba36973af2ccfc57a280::1788872479::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://default_env.tres::36707e371dedba36973af2ccfc57a280::1789095152::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://Cenas/HUDEducativo.tscn::b45014f41a418aa24ebfdb42c5bda639::1789093262::res://.godot/exported/133200997/export-c895cb4e2d0e86763d3eb947d517dc10-HUDEducativo.scn
