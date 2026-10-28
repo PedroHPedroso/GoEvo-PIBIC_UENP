@@ -3,7 +3,8 @@ extends Area2D
 signal fase_concluida
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var label_interacao: Label = $LabelInteracao
+@onready var prompt_interacao: PanelContainer = $PromptInteracao
+@onready var tecla_interacao: TextureRect = $PromptInteracao/HBox/TeclaE
 @onready var caixa_de_dialogo: PanelContainer = $CanvasLayer/CaixaDeDialogo
 @onready var texto_dialogo: Label = $CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/TextoDialogo
 @onready var advance_hint: Label = $CanvasLayer/CaixaDeDialogo/Margin/HBox/TextBlock/Header/AdvanceHint
@@ -21,6 +22,7 @@ var animacoes_falas: Array[StringName] = []
 
 var deve_concluir_fase: bool = false
 var fase_ja_concluida: bool = false
+var animacao_tecla: Tween
 
 func _ready() -> void:
 	# Os sprites originais olham para a direita.
@@ -28,7 +30,7 @@ func _ready() -> void:
 	anim.play("Idle")
 	caixa_de_dialogo.visible = false
 	advance_hint.visible = false
-	label_interacao.visible = false
+	prompt_interacao.visible = false
 	
 func _process(_delta) -> void:
 	if player_in_area and not falando and Input.is_action_just_pressed("interacao"):
@@ -40,14 +42,13 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name ==  "Player":
 		player_in_area = true
 		player_atual = body
-		label_interacao.text = "E  CONVERSAR"
-		label_interacao.visible = true
+		mostrar_prompt_interacao()
 
 func _on_body_exited(body) -> void:
 	if body.name == "Player":
 		player_in_area = false
 		player_atual = null
-		label_interacao.visible = false
+		ocultar_prompt_interacao()
 		if falando:
 			encerrar_dialogo()
 			
@@ -59,10 +60,37 @@ func iniciar_dialogo():
 	
 	falando = true
 	versao_dialogo += 1
-	label_interacao.visible = false
+	ocultar_prompt_interacao()
 	caixa_de_dialogo.visible = true
 	fala_index = 0
 	proxima_fala()
+
+func mostrar_prompt_interacao() -> void:
+	prompt_interacao.visible = true
+	iniciar_animacao_tecla()
+
+func ocultar_prompt_interacao() -> void:
+	prompt_interacao.visible = false
+	parar_animacao_tecla()
+
+func iniciar_animacao_tecla() -> void:
+	parar_animacao_tecla()
+
+	animacao_tecla = create_tween().set_loops()
+	animacao_tecla.tween_interval(0.45)
+	animacao_tecla.tween_property(tecla_interacao, "scale", Vector2(1.0, 0.72), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	animacao_tecla.parallel().tween_property(tecla_interacao, "modulate", Color(0.76, 0.76, 0.76, 1.0), 0.1)
+	animacao_tecla.tween_property(tecla_interacao, "scale", Vector2.ONE, 0.14).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	animacao_tecla.parallel().tween_property(tecla_interacao, "modulate", Color.WHITE, 0.14)
+	animacao_tecla.tween_interval(0.55)
+
+func parar_animacao_tecla() -> void:
+	if animacao_tecla != null:
+		animacao_tecla.kill()
+		animacao_tecla = null
+
+	tecla_interacao.scale = Vector2.ONE
+	tecla_interacao.modulate = Color.WHITE
 	
 func selecionar_dialogo() -> void:
 	var quantidade_moscas: int = player_atual.moscas
