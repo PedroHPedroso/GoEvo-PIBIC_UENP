@@ -2,6 +2,9 @@
 .import/
 *.md
 !README.md
+!AGENTS.md
+!.codex/skills/graphify/SKILL.md
+!.codex/skills/graphify/references/*.md
 *Cenas/Fase3/*.gdshader
 *Cenas/Fase3/*.gdshader.uid
 *.uid

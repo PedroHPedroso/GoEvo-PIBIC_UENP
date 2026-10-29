@@ -1,7 +1,7 @@
 res://Cenas/Fase1/Fase1.tscn::6941a6b47f49723389ec1af3822274e2::1789094213::res://.godot/exported/133200997/export-7cfceb6cc8fe90040ff597163b7cfb99-Fase1.scn
 res://Cenas/Fase1/mosquinha.tscn::2633f61b3e1128d8a4d5cccf783eba46::1788232865::res://.godot/exported/133200997/export-3f37ba22f508c0549e9ba475c36233db-mosquinha.scn
 res://Cenas/Fase1/player.tscn::89387e0f41befcd3fe88577f2cda17c9::1788232866::res://.godot/exported/133200997/export-9d81a229e06d3be91a5a66e26b372cdc-player.scn
-res://Cenas/Fase1/sapinha.tscn::58b3fce848791f2912c2493278d88f5b::1788232867::res://.godot/exported/133200997/export-d56ad0f8d0c0437dd7dbd17aaee27fb4-sapinha.scn
+res://Cenas/Fase1/sapinha.tscn::ce2cafa563c0dcafb0a12ace3276162c::1793157851::res://.godot/exported/133200997/export-d56ad0f8d0c0437dd7dbd17aaee27fb4-sapinha.scn
 res://Cenas/Fase2/Fase2.tscn::7ee74f1887e63fe5c0395420eb824160::1789094335::res://.godot/exported/133200997/export-68edd996c0110a0e8417c8e2489afac5-Fase2.scn
 res://Cenas/Fase2/PlayerMariposa.tscn::f03480d80a37c09c79c1c0c36be2ec78::1788232870::res://.godot/exported/133200997/export-4a5b4c5ffe04820b4707ffafd3d3b2c0-PlayerMariposa.scn
 res://Cenas/Fase2/predador.tscn::873eb3befdfe956b05c8474f54d7f97b::1788297429::res://.godot/exported/133200997/export-1a3ffcb6f192fe4bf4d603638d5bf7cc-predador.scn
@@ -23,5 +23,5 @@ res://Cenas/Fase4/larva.tscn::826970c633af69884e59c528bdd6f3bd::1788232898::res:
 res://Cenas/Fase4/plataforma.tscn::3c8f3bebb86c908587b1cb88103d6f90::1788232900::res://.godot/exported/133200997/export-da10b06cdf1e2bc3a1f15028b769023c-plataforma.scn
 res://Cenas/Fase4/player_tentilhao.tscn::685d445934918af667b300c66105929d::1788232901::res://.godot/exported/133200997/export-7b69e31014c0a689d1fa7622cc4d8516-player_tentilhao.scn
 res://Cenas/Fase4/recurso.tscn::407dab672145acf8a7f1c8c83973ed30::1788232903::res://.godot/exported/133200997/export-f25103cb752bf8123d091e390e050423-recurso.scn
-res://default_env.tres::36707e371dedba36973af2ccfc57a280::1789095152::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://default_env.tres::36707e371dedba36973af2ccfc57a280::1793200698::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
 res://Cenas/HUDEducativo.tscn::b45014f41a418aa24ebfdb42c5bda639::1789093262::res://.godot/exported/133200997/export-c895cb4e2d0e86763d3eb947d517dc10-HUDEducativo.scn

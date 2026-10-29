@@ -184,9 +184,8 @@ body {
   max-width: 380px;
   width: 100%;
   image-rendering: pixelated;
-  filter: drop-shadow(0 0 16px rgba(57, 255, 20, 0.5))
-          drop-shadow(0 0 32px rgba(57, 255, 20, 0.25));
-  animation: logo-pulse 3s ease-in-out infinite;
+  filter: saturate(0.6) brightness(0.92) contrast(1.08);
+  animation: none;
 }
 
 @keyframes logo-pulse {
